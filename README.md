@@ -20,5 +20,10 @@ npm run build
 npm run lint
 ```
 
+### Install Bootstrap
+```
+npm install bootstrap jquery popper.js
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
