@@ -1,95 +1,95 @@
 <template>
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-6">
-        <h3>Site Map</h3>
-        <ul class="list-unstyled three-column">
-          <li>Home</li>
-          <li>Services</li>
-          <li>About</li>
-          <li>Code</li>
-          <li>Design</li>
-          <li>Host</li>
-          <li>Contact</li>
-          <li>Company</li>
-        </ul>
-        <ul class="list-unstyled socila-list">
-          <li><img src="http://placehold.it/48x48" alt="" /></li>
-          <li><img src="http://placehold.it/48x48" alt="" /></li>
-          <li><img src="http://placehold.it/48x48" alt="" /></li>
-          <li><img src="http://placehold.it/48x48" alt="" /></li>
-          <li><img src="http://placehold.it/48x48" alt="" /></li>
-          <li><img src="http://placehold.it/48x48" alt="" /></li>
-        </ul>
-      </div>
-      
-      <div class="col-lg-4 col-md-6">
-        <h3>Maintainers</h3>        
-        <div class="media">
-          <div class="image-cropper">
-              <img src="images/maintainers/CSenshi.png" class="rounded" />
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <h3>Site Map</h3>
+          <ul class="list-unstyled three-column">
+            <li>Home</li>
+            <li>Services</li>
+            <li>About</li>
+            <li>Code</li>
+            <li>Design</li>
+            <li>Host</li>
+            <li>Contact</li>
+            <li>Company</li>
+          </ul>
+          <ul class="list-unstyled socila-list">
+            <li><img src="http://placehold.it/48x48" alt=""/></li>
+            <li><img src="http://placehold.it/48x48" alt=""/></li>
+            <li><img src="http://placehold.it/48x48" alt=""/></li>
+            <li><img src="http://placehold.it/48x48" alt=""/></li>
+            <li><img src="http://placehold.it/48x48" alt=""/></li>
+            <li><img src="http://placehold.it/48x48" alt=""/></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h3>Maintainers</h3>
+          <div class="media">
+            <div class="image-cropper">
+              <img src="images/maintainers/CSenshi.png" class="rounded"/>
+            </div>
+            <div class="media-body">
+              <a href="https://github.com/CSenshi" class="media-heading">
+                <h4 class="media-heading">CSenshi</h4>
+              </a>
+              <p>Saba Pochkhua</p>
+            </div>
           </div>
-          <div class="media-body">
-            <a href="https://github.com/CSenshi" class="media-heading">
-            <h4 class="media-heading">CSenshi</h4>
-            </a>
-            <p>Saba Pochkhua</p>
+          <div class="media">
+            <div class="media-body" style="text-align: right;">
+              <a href="https://github.com/nikalosa" class="media-heading">
+                <h4 class="media-heading">NikaLosa</h4>
+              </a>
+              <p>Nika Losaberidze</p>
+            </div>
+            <div class="image-cropper">
+              <img src="images/maintainers/NikaLosa.jpg" class="rounded"/>
+            </div>
           </div>
         </div>
-        <div class="media">
-          <div class="media-body" style="text-align: right;">
-            <a href="https://github.com/nikalosa" class="media-heading">
-            <h4 class="media-heading">NikaLosa</h4>
-            </a>
-            <p>Nika Losaberidze</p>
-          </div>
-         <div class="image-cropper">
-              <img src="images/maintainers/NikaLosa.jpg" class="rounded" />
-          </div>
-        </div>        
-      </div>
 
-      <div class="col-lg-4">
-        <h3>Built By</h3>
-        <img class="img-thumbnail" src="images/built-by/cloud-functions.png" alt="" />
-        <img class="img-thumbnail" src="images/built-by/cloud-endpoints.png" alt="" />
-        <img class="img-thumbnail" src="images/built-by/cloud-datastore.png" alt="" />
-        <img class="img-thumbnail" src="images/built-by/vue.png" alt="" />
-        <img class="img-thumbnail" src="images/built-by/cloud-pubsub.png" alt="" />
-        <img class="img-thumbnail" src="images/built-by/cloud-firebase.png" alt="" />
+        <div class="col-lg-4">
+          <h3>Built By</h3>
+          <img class="img-thumbnail" src="images/built-by/cloud-functions.png" alt=""/>
+          <img class="img-thumbnail" src="images/built-by/cloud-endpoints.png" alt=""/>
+          <img class="img-thumbnail" src="images/built-by/cloud-datastore.png" alt=""/>
+          <img class="img-thumbnail" src="images/built-by/vue.png" alt=""/>
+          <img class="img-thumbnail" src="images/built-by/cloud-pubsub.png" alt=""/>
+          <img class="img-thumbnail" src="images/built-by/cloud-firebase.png" alt=""/>
+        </div>
+
       </div>
-      
     </div>
-  </div>
-  <div class="copyright text-center">
-    Copyright &copy; 202 <span>vik-vok</span>
-  </div>
-</footer>
+    <div class="copyright text-center">
+      Copyright &copy; 202 <span>vik-vok</span>
+    </div>
+  </footer>
 </template>
 
 <script>
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default {
-    name: "Footer",
+  name: "Footer",
 }
 </script>
 
 <style scoped>
 
-.media-body{
+.media-body {
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .image-cropper {
-    width: 90px;
-    height: 90px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    padding: 1px;
+  width: 90px;
+  height: 90px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  padding: 1px;
 }
 
 img.rounded {
@@ -116,17 +116,17 @@ footer a:hover {
 }
 
 footer h3 {
- color: #0894d1;
+  color: #0894d1;
   letter-spacing: 1px;
   margin: 30px 0 20px;
 }
 
 footer .three-column {
- overflow: hidden;
+  overflow: hidden;
 }
 
-footer .three-column li{
- width: 33.3333%;
+footer .three-column li {
+  width: 33.3333%;
   float: left;
   padding: 5px 0;
 }
