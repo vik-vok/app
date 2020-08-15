@@ -2,7 +2,7 @@
   <div>
     <nav class="main-nav">
       <a
-        class="header-navigation-option cd-signin"
+        class="cd-signin"
       >Sign in</a>
     </nav>
     
@@ -71,7 +71,6 @@
           <p class="cd-form-bottom-message">
             <a href="#0">Forgot your password?</a>
           </p>
-        <!-- <a href="#0" class="cd-close-form">Close</a> -->
         </div> <!-- cd-login -->
 
         <div id="cd-signup">
@@ -139,8 +138,6 @@
               >
             </p>
           </form>
-
-        <!-- <a href="#0" class="cd-close-form">Close</a> -->
         </div> <!-- cd-signup -->
 
         <div id="cd-reset-password">
@@ -182,7 +179,7 @@
           class="cd-close-form"
         >Close</a>
       </div> <!-- cd-user-modal-container -->
-    </div> <!-- cd-user-modal -->
+    </div> 
     <div />
   </div>
 </template>
@@ -321,11 +318,6 @@ export default {
 </script>
 
 <style  scoped>
-/* https://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -389,7 +381,6 @@ html * {
 
 body {
   font-size: 100%;
-  font-family: "PT Sans", sans-serif;
   color: #505260;
   background-color: #454751;
 }
@@ -412,85 +403,6 @@ input::-ms-clear, textarea::-ms-clear {
   display: none;
 }
 
-/* -------------------------------- 
-
-xcody-info 
-
--------------------------------- */
-#cody-info {
-  position: relative;
-  background: #FFF;
-  height: 44px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-#cody-info .cody-info-logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -15px;
-  margin-top: -13px;
-}
-#cody-info .cody-info-logo svg {
-  display: block;
-  -webkit-transition: opacity, 0.2s;
-  -moz-transition: opacity, 0.2s;
-  transition: opacity, 0.2s;
-}
-#cody-info .cody-info-logo svg:hover {
-  opacity: .9;
-}
-#cody-info .cody-info-logo .cody-info-logo-svg {
-  fill: #343642;
-}
-#cody-info li {
-  position: absolute;
-  top: 0;
-}
-#cody-info li:first-child {
-  left: 0;
-}
-#cody-info li:last-child {
-  right: 0;
-}
-#cody-info li a {
-  display: block;
-  width: 44px;
-  height: 44px;
-  position: relative;
-  -webkit-transition: background 0.2s;
-  -moz-transition: background 0.2s;
-  transition: background 0.2s;
-}
-#cody-info li a:hover {
-  background-color: #29889b;
-}
-#cody-info li a:hover .cody-info-buttons-svg {
-  fill: #FFF;
-}
-#cody-info li svg {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -16px;
-  margin-left: -16px;
-}
-#cody-info li .cody-info-buttons-svg {
-  fill: #29889b;
-}
-#cody-info.cody-info-bottom {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
-}
-#cody-info::after {
-  content: '';
-  display: table;
-  clear: both;
-}
 @media only screen and (min-width: 600px) {
   #cody-info {
     height: 60px;
@@ -549,15 +461,6 @@ header[role=banner]::after {
   }
 }
 
-.main-nav {
-  /* float: right;
-  margin-right: 5%;
-  width: 44px;
-  height: 100%; */
-  /* background: url("../img/cd-icon-menu.svg") no-repeat center center; */
-  /* cursor: pointer; */
-}
-
 @media only screen and (min-width: 768px) {
   .main-nav {
     width: auto;
@@ -596,6 +499,8 @@ header[role=banner]::after {
     background: transparent;
   }
   .main-nav a.cd-signin, .main-nav a.cd-signup {
+	color: white;
+	cursor: pointer;
     padding: .6em 1em;
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50em;
@@ -700,6 +605,11 @@ xsigin/signup popup
   }
 }
 
+label{
+	color: #809194;
+  margin: 0 5px
+}
+
 .cd-form {
   padding: 1.4em;
 }
@@ -738,15 +648,6 @@ xsigin/signup popup
   text-shadow: none;
   background-repeat: no-repeat;
   background-position: 50% 0;
-}
-.cd-form label.cd-username {
-  /* background-image: url("../img/cd-icon-username.svg"); */
-}
-.cd-form label.cd-email {
-  /* background-image: url("../img/cd-icon-email.svg"); */
-}
-.cd-form label.cd-password {
-  /* background-image: url("../img/cd-icon-password.svg"); */
 }
 .cd-form input {
   margin: 0;

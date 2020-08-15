@@ -32,15 +32,6 @@ export default {
 }
 </script>
 
-<style >
-  .header-navigation-option{
-    color:white !important;
-  }
-  #nav a {
-    color:white;
-  }
-</style>
-
 <style scoped>
  #nav {
     min-height: calc(100vh - 245px);
@@ -52,7 +43,12 @@ export default {
   }
 
   #nav a {
-    color:white;
+    font-weight: bold;
+    color: white;
+  }
+
+  #nav a.router-link-exact-active {
+    color: #42b983;
   }
 
   #nav-in{
