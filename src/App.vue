@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-
-    <NavBar/>
-    <router-view/>
-    <Footer/>
-
+    <NavBar />
+    <Footer />
   </div>
 </template>
 
@@ -13,7 +10,7 @@ import NavBar from './components/layout/NavBar';
 import Footer from './components/layout/Footer';
 
 export default {
-  name: "app",
+  name: "App",
   components: {
     NavBar,
     Footer

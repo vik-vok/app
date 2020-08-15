@@ -15,12 +15,42 @@
             <li>Company</li>
           </ul>
           <ul class="list-unstyled socila-list">
-            <li><img src="http://placehold.it/48x48" alt=""/></li>
-            <li><img src="http://placehold.it/48x48" alt=""/></li>
-            <li><img src="http://placehold.it/48x48" alt=""/></li>
-            <li><img src="http://placehold.it/48x48" alt=""/></li>
-            <li><img src="http://placehold.it/48x48" alt=""/></li>
-            <li><img src="http://placehold.it/48x48" alt=""/></li>
+            <li>
+              <img
+                src="http://placehold.it/48x48"
+                alt=""
+              >
+            </li>
+            <li>
+              <img
+                src="http://placehold.it/48x48"
+                alt=""
+              >
+            </li>
+            <li>
+              <img
+                src="http://placehold.it/48x48"
+                alt=""
+              >
+            </li>
+            <li>
+              <img
+                src="http://placehold.it/48x48"
+                alt=""
+              >
+            </li>
+            <li>
+              <img
+                src="http://placehold.it/48x48"
+                alt=""
+              >
+            </li>
+            <li>
+              <img
+                src="http://placehold.it/48x48"
+                alt=""
+              >
+            </li>
           </ul>
         </div>
 
@@ -28,45 +58,85 @@
           <h3>Maintainers</h3>
           <div class="media">
             <div class="image-cropper">
-              <img src="images/maintainers/CSenshi.png" class="rounded"/>
+              <img
+                src="images/maintainers/CSenshi.png"
+                class="rounded"
+              >
             </div>
-            <div class="media-body" style="text-align: left;">
-              <a href="https://github.com/CSenshi" class="media-heading">
+            <div
+              class="media-body"
+              style="text-align: left;"
+            >
+              <a
+                href="https://github.com/CSenshi"
+                class="media-heading"
+              >
                 <h4 class="media-heading">CSenshi</h4>
               </a>
               <p>Saba Pochkhua</p>
             </div>
           </div>
           <div class="media">
-            <div class="media-body" style="text-align: right;">
-              <a href="https://github.com/nikalosa" class="media-heading">
+            <div
+              class="media-body"
+              style="text-align: right;"
+            >
+              <a
+                href="https://github.com/nikalosa"
+                class="media-heading"
+              >
                 <h4 class="media-heading">NikaLosa</h4>
               </a>
               <p>Nika Losaberidze</p>
             </div>
             <div class="image-cropper">
-              <img src="images/maintainers/NikaLosa.jpg" class="rounded"/>
+              <img
+                src="images/maintainers/NikaLosa.jpg"
+                class="rounded"
+              >
             </div>
           </div>
         </div>
 
         <div class="col-lg-4">
           <h3>Built By</h3>
-          <img class="img-thumbnail" src="images/built-by/cloud-functions.png" alt=""/>
-          <img class="img-thumbnail" src="images/built-by/cloud-endpoints.png" alt=""/>
-          <img class="img-thumbnail" src="images/built-by/cloud-datastore.png" alt=""/>
-          <img class="img-thumbnail" src="images/built-by/vue.png" alt=""/>
-          <img class="img-thumbnail" src="images/built-by/cloud-pubsub.png" alt=""/>
-          <img class="img-thumbnail" src="images/built-by/cloud-firebase.png" alt=""/>
+          <img
+            class="img-thumbnail"
+            src="images/built-by/cloud-functions.png"
+            alt=""
+          >
+          <img
+            class="img-thumbnail"
+            src="images/built-by/cloud-endpoints.png"
+            alt=""
+          >
+          <img
+            class="img-thumbnail"
+            src="images/built-by/cloud-datastore.png"
+            alt=""
+          >
+          <img
+            class="img-thumbnail"
+            src="images/built-by/vue.png"
+            alt=""
+          >
+          <img
+            class="img-thumbnail"
+            src="images/built-by/cloud-pubsub.png"
+            alt=""
+          >
+          <img
+            class="img-thumbnail"
+            src="images/built-by/cloud-firebase.png"
+            alt=""
+          >
         </div>
-
       </div>
     </div>
     <div class="copyright text-center">
       Copyright &copy; 202 <span>vik-vok</span>
     </div>
   </footer>
-  
 </template>
 
 <script>
