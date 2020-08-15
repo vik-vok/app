@@ -15,3 +15,9 @@ export default {
   name: "NavBar"
 }
 </script>
+
+<style scoped>
+ #nav {
+    min-height: calc(100vh - 245px);
+  }
+</style>

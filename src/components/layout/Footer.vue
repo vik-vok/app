@@ -11,8 +11,6 @@
             <li>Code</li>
             <li>Design</li>
             <li>Host</li>
-            <li>Contact</li>
-            <li>Company</li>
           </ul>
           <ul class="list-unstyled socila-list">
             <li>
@@ -155,8 +153,8 @@ export default {
 }
 
 .image-cropper {
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
@@ -166,8 +164,8 @@ export default {
 img.rounded {
   object-fit: cover;
   border-radius: 50%;
-  height: 90px;
-  width: 90px;
+  height: 70px;
+  width: 70px;
 }
 
 footer {
@@ -188,7 +186,7 @@ footer a:hover {
 footer h3 {
   color: #0894d1;
   letter-spacing: 1px;
-  margin: 30px 0 20px;
+  margin: 10px 0 10px;
 }
 
 footer .three-column {
@@ -203,7 +201,7 @@ footer .three-column li {
 
 footer .socila-list {
   overflow: hidden;
-  margin: 20px 0 10px;
+  margin: 10px 0 10px;
 }
 
 footer .socila-list li {
@@ -223,13 +221,13 @@ footer .img-thumbnail {
   background: rgba(0, 0, 0, 0);
   border: 1px solid #0000;
   margin-bottom: 5px;
-  width: 90px;
+  width: 75px;
 }
 
 footer .copyright {
   padding: 5px 0;
   background: #333;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   font-size: 15px;
 }
 
