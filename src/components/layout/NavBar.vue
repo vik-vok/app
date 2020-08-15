@@ -2,32 +2,44 @@
   <div id="nav">
     <nav class="navbar navbar-dark bg-dark nav-custom">
       <div>
-        <router-link to="/">
+        <router-link
+          class="header-navigation-option"
+          to="/"
+        >
           Home
         </router-link> |
-        <router-link to="/about">
+        <router-link
+          class="header-navigation-option"
+          to="/about"
+        >
           About
         </router-link>
       </div>
-      <div>
-        <!-- Should Be Search Bar -->
-      </div>
-      <!-- <SignIn /> -->
+      <SignIn />
     </nav>
     <router-view />
   </div>
 </template>
 
 <script>
-// import SignIn from './sign-in/SignIn'
+import SignIn from './sign-in/SignIn'
 
 export default {
   name: "NavBar",
-  // components: {
-  //   SignIn
-  // }
+  components: {
+    SignIn
+  }
 }
 </script>
+
+<style >
+  .header-navigation-option{
+    color:white !important;
+  }
+  #nav a {
+    color:white;
+  }
+</style>
 
 <style scoped>
  #nav {
