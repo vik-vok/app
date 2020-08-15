@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="mt-auto">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-6">
@@ -30,7 +30,7 @@
             <div class="image-cropper">
               <img src="images/maintainers/CSenshi.png" class="rounded"/>
             </div>
-            <div class="media-body">
+            <div class="media-body" style="text-align: left;">
               <a href="https://github.com/CSenshi" class="media-heading">
                 <h4 class="media-heading">CSenshi</h4>
               </a>
@@ -66,6 +66,7 @@
       Copyright &copy; 202 <span>vik-vok</span>
     </div>
   </footer>
+  
 </template>
 
 <script>
@@ -79,7 +80,7 @@ export default {
 <style scoped>
 
 .media-body {
-  margin-left: 10px;
+  margin-left: 10px; 
   margin-right: 10px;
 }
 
@@ -100,7 +101,6 @@ img.rounded {
 }
 
 footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   background: #222;
@@ -157,7 +157,7 @@ footer .img-thumbnail {
 }
 
 footer .copyright {
-  padding: 15px 0;
+  padding: 5px 0;
   background: #333;
   margin-top: 20px;
   font-size: 15px;
