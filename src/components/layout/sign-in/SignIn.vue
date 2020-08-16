@@ -17,13 +17,14 @@
 
         <div id="cd-login">
           <!-- log in form -->
-          <form class="cd-form">
+          <form class="cd-form" @submit="signIn">
             <p class="fieldset">
               <label
                 class="image-replace cd-email"
                 for="signin-email"
               >E-mail</label>
               <input
+                v-model="email"
                 class="full-width has-padding has-border"
                 id="signin-email"
                 type="email"
@@ -38,6 +39,7 @@
                 for="signin-password"
               >Password</label>
               <input
+                v-model="password"
                 class="full-width has-padding has-border"
                 id="signin-password"
                 type="text"
@@ -64,13 +66,14 @@
 
         <div id="cd-signup">
           <!-- sign up form -->
-          <form class="cd-form">
+          <form class="cd-form"  @submit="signUp">
             <p class="fieldset">
               <label
                 class="image-replace cd-username"
                 for="signup-username"
               >Username</label>
               <input
+                v-model="username"
                 class="full-width has-padding has-border"
                 id="signup-username"
                 type="text"
@@ -85,6 +88,7 @@
                 for="signup-email"
               >E-mail</label>
               <input
+                v-model="email"
                 class="full-width has-padding has-border"
                 id="signup-email"
                 type="email"
@@ -99,6 +103,7 @@
                 for="signup-password"
               >Password</label>
               <input
+                v-model="password"
                 class="full-width has-padding has-border"
                 id="signup-password"
                 type="text"
@@ -175,12 +180,28 @@
 </template>
 
 <script>
-import '@/components/layout/sign-in/sign-in.js'
+import '@/components/layout/sign-in/sign-in-front.js'
+import handlers from './sign-in'
 import SocialSignIns from './SocialSignIns'
 
 export default {
   name: "SignIn",
-  components: {SocialSignIns}
+  components: {SocialSignIns},
+  data() {
+    return {
+      email: "",
+      password: "",
+      username: "",
+    };
+  },
+  methods:{
+    signUp() {
+      handlers.SignUp(this.email,this.password, this.username);
+    },
+    signIn(){
+      handlers.SignIn(this.email,this.password);
+    } 
+  }
 }
 </script>
 
