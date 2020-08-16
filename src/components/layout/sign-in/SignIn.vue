@@ -17,7 +17,7 @@
 
         <div id="cd-login">
           <!-- log in form -->
-          <form class="cd-form" @submit="signIn">
+          <form class="cd-form" @submit="signIn(email, password)">
             <p class="fieldset">
               <label
                 class="image-replace cd-email"
@@ -66,7 +66,7 @@
 
         <div id="cd-signup">
           <!-- sign up form -->
-          <form class="cd-form"  @submit="signUp">
+          <form class="cd-form"  @submit="signUp(email, password, username)">
             <p class="fieldset">
               <label
                 class="image-replace cd-username"
@@ -195,12 +195,8 @@ export default {
     };
   },
   methods:{
-    signUp() {
-      handlers.SignUp(this.email,this.password, this.username);
-    },
-    signIn(){
-      handlers.SignIn(this.email,this.password);
-    } 
+    signUp: handlers.SignUp,
+    signIn : handlers.SignIn
   }
 }
 </script>

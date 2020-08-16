@@ -2,19 +2,14 @@
  * Handles the sign up button press.
  */
 function SignUp(email, password, username) {
-    console.log(email)
-    console.log(password)
-    console.log(username)
-    return;
+    console.log("SignUp Here!!!", email, password, username)
 }
 
 /**
  * Handles the sign in button press.
  */
 function SignIn(email,password) {
-    console.log(email)
-    console.log(password)
-    return;
+    console.log("SignIn Here!!!", email, password)
 }
 
 
