@@ -13,7 +13,6 @@
 </template>
 
 <script>
-// import 'bootstrap-social'
 export default {
     name: "SocialSignIns"
 }
