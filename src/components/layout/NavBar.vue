@@ -22,12 +22,12 @@
 </template>
 
 <script>
-// import SignIn from './sign-in/SignIn'
+import SignIn from '@/components/layout/sign-in/SignIn'
 
 export default {
   name: "NavBar",
   components: {
-    // SignIn
+    SignIn
   }
 }
 </script>
