@@ -138,12 +138,14 @@
 </template>
 
 <script>
+
 export default {
   name: "Footer",
 }
 </script>
 
 <style scoped>
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
 
 .media-body {
   margin-left: 10px; 
