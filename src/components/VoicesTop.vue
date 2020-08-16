@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div v-bind:key="voice.id" v-for="voice in voices" >
+        <div v-bind:key="voice.id" v-for="voice in allVoices" >
+            VUEX TEST
             <VoicePlayer :voiceName="voice.name" :voicePath="voice.path" />
         </div>
     </div>
@@ -8,33 +9,13 @@
 
 <script>
 import VoicePlayer from '@/components/VoicePlayer.vue'
+import { mapGetters } from 'vuex'
 
 export default {
     name: "VoicesTop",
+    computed: mapGetters(['allVoices']),
     components: {
         VoicePlayer
-    },
-    data() {
-        return {
-            voices: [
-                {
-                    id: 1,
-                    name: "voice1",
-                    path: "path1"
-                },
-                {
-                    id: 2,
-                    name: "voice2",
-                    path: "path2"
-
-                },
-                {
-                    id: 3,
-                    name: "voice3",
-                    path: "path3"
-                }
-            ]
-        }
     }
 }
 </script>
