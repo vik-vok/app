@@ -176,11 +176,11 @@
 
 <script>
 import '@/components/layout/sign-in/sign-in.js'
-// import SocialSignIns from './SocialSignIns'
+import SocialSignIns from './SocialSignIns'
 
 export default {
   name: "SignIn",
-//   components: {SocialSignIns}
+  components: {SocialSignIns}
 }
 </script>
 
