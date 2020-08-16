@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <!-- <NavBar /> -->
-    asdasd
+    <NavBar />
     <Footer />
   </div>
 </template>
 
 <script>
-// import NavBar from './components/layout/NavBar';
+import NavBar from './components/layout/NavBar';
 import Footer from '@/components/layout/Footer';
 
 export default {
   name: "App",
   components: {
-    // NavBar,
+    NavBar,
     Footer
   }
 }
