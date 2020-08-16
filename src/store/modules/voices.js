@@ -1,29 +1,21 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 const state = {
-    voices: [{
-            id: 1,
-            name: "voice1",
-            path: "path1"
-        },
-        {
-            id: 2,
-            name: "voice2",
-            path: "path2"
-
-        },
-        {
-            id: 3,
-            name: "voice3",
-            path: "path3"
-        }
-    ]
+    voices: []
 }
+
+const actions = {
+    async fetchVoices() {
+        const response = await axios.get("https://vikvok-anldg2io3q-ew.a.run.app/Comments");
+
+        console.log(response.data);
+    }
+}
+
 const getters = {
     allVoices: (state) => state.voices
 }
 
-const actions = {}
 
 const mutations = {}
 

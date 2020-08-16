@@ -9,11 +9,17 @@
 
 <script>
 import VoicePlayer from '@/components/VoicePlayer.vue'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: "VoicesTop",
+    methods: {
+        ...mapActions(['fetchVoices'])
+    },
     computed: mapGetters(['allVoices']),
+    created(){
+        this.fetchVoices();
+    },
     components: {
         VoicePlayer
     }
