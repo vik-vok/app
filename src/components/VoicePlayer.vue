@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <h1>{{voiceName}}</h1>
-        <audio controls>
+    <div class="voice">
+        <h3>{{voiceName}}</h3>
+        <audio controls class="player">
             <source :src="voicePath" type="audio/ogg">
         </audio>
     </div>
@@ -16,3 +16,13 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.voice{
+    margin: 20px 30px;
+}
+
+.player{
+    width: 100%;
+}
+</style>

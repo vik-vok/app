@@ -1,5 +1,8 @@
 <template>
-    <Voices />
+    <div>
+        <h1> List of All Voices </h1>
+        <Voices class="left" />
+    </div>
 </template>
 
 <script>
@@ -11,3 +14,12 @@ export default {
     }    
 }
 </script>
+
+<style scoped>
+
+.left {
+  position: absolute;
+  left: 0px;
+}
+
+</style>
