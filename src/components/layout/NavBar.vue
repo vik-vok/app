@@ -13,6 +13,12 @@
           to="/about"
         >
           About
+        </router-link> |
+        <router-link
+          class="header-navigation-option"
+          to="/voices"
+        >
+          Voices
         </router-link>
       </div>
       <SignIn />

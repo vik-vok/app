@@ -5,19 +5,20 @@ const state = {
 }
 
 const actions = {
-    async fetchVoices() {
-        const response = await axios.get("https://vikvok-anldg2io3q-ew.a.run.app/Comments");
-
-        console.log(response.data);
+    async fetchVoices({commit}) {
+        const response = await axios.get("https://vikvok-anldg2io3q-ew.a.run.app/originalvoices");
+        commit('setVoices', response.data)
     }
 }
+
+const mutations = {
+    setVoices: (state, voices) => (state.voices = voices)
+}
+
 
 const getters = {
     allVoices: (state) => state.voices
 }
-
-
-const mutations = {}
 
 export default {
     state,
