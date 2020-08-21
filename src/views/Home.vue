@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <Voices :isAll="false"/>
+    <Voices class="center" :isAll="false"/>
   </div>
 </template>
 
@@ -14,3 +14,9 @@ export default {
   }    
 }
 </script>
+
+<style scoped>
+.center{
+  margin:0 auto;
+}
+</style>

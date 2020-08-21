@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="player">
         <div v-bind:key="voice.id" v-for="voice in this.voices" >
-            <VoicePlayer class="player" :voiceName="voice.name" :voicePath="voice.path" />
+            <VoicePlayer :voiceName="voice.name" :voicePath="voice.path" />
         </div>
     </div>
 </template>
@@ -18,7 +18,6 @@ export default {
     computed: {
         ...mapGetters(['allVoices', 'popularVoices']),
         voices: function () {
-            console.log(this.isAll)
             return this.isAll ? this.allVoices : this.popularVoices;
         }
     },
