@@ -34,7 +34,8 @@ const mutations = {
 
 
 const getters = {
-    allVoices: (state) => state.voices
+    allVoices: (state) => state.voices,
+    popularVoices: (state) => state.voices.slice(0, 3)
 }
 
 export default {
