@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-bind:key="voice.id" v-for="voice in allVoices" >
-            <VoicePlayer :voiceName="voice.name" :voicePath="voice.path" />
+            <VoicePlayer class="player" :voiceName="voice.name" :voicePath="voice.path" />
         </div>
     </div>
 </template>
@@ -26,3 +26,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.player{
+    width: 1200px;
+}
+</style>

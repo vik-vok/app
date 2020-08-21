@@ -18,7 +18,6 @@ export default {
 <style scoped>
 
 .left {
-  position: absolute;
   left: 0px;
 }
 
