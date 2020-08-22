@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <div class="first">
+        <div class="first" v-bind:style="[backgroundAvatar]" >
         </div>
         <div class="second">
             <div class="second-inner second-header">
@@ -29,7 +29,12 @@ export default {
     name: "VoicePlayer",
     props: {
         voice: Object
-    }
+    },
+    computed: {
+      backgroundAvatar: function () {
+        return {'background-image' : 'url('+this.voice.avatar+')',};
+      }
+    },
 }
 </script>
 
@@ -57,7 +62,7 @@ export default {
     width: 140px;
     background-size: cover;
     background-position: center center;
-    background-image: url("https://avatarfiles.alphacoders.com/121/121989.png");
+    /* background-image: url("https://avatarfiles.alphacoders.com/121/121989.png"); */
 }
 
 
