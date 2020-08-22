@@ -19,6 +19,10 @@ Vue.use(VueRouter)
     path: '/voices',
     name: 'Voices',
     component: () => import('../views/VoicesPage.vue')
+  },
+  {
+    path: '/voices/:id',
+    component: () => import('../views/VoicesPage.vue')
   }
 ]
 

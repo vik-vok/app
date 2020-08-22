@@ -1,7 +1,7 @@
 <template>
     <div class="player">
         <div v-bind:key="voice.id" v-for="voice in this.voices" >
-            <VoicePlayer :voiceName="voice.name" :voicePath="voice.path" />
+            <VoicePlayer :voice=voice />
         </div>
     </div>
 </template>

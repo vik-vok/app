@@ -5,10 +5,13 @@
         </div>
         <div class="second">
             <div class="second-inner second-header">
-                <span>{{voiceName}}</span>
+                <router-link v-bind:to="'/voices/' + voice.voiceid">
+                <span>{{voice.name}}</span>
+                </router-link>
+                
             </div>
             <audio controls class="second-inner">
-                <source :src="voicePath" type="audio/ogg">
+                <source :src="voice.path" type="audio/ogg">
             </audio>
             <div class="second-inner">
                 <div class="inner-left">
@@ -26,8 +29,7 @@
 export default {
     name: "VoicePlayer",
     props: {
-        voiceName: String,
-        voicePath: String   
+        voice: Object
     }
 }
 </script>
