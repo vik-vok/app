@@ -22,7 +22,7 @@ Vue.use(VueRouter)
   },
   {
     path: '/voices/:id',
-    component: () => import('../views/VoicesPage.vue')
+    component: () => import('../views/VoiceSinglePage.vue')
   }
 ]
 

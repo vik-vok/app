@@ -13,10 +13,10 @@ const actions = {
         commit('setVoices', response.data)
     },
     async fetchOneVoice({
-        commit , id
-    }){
-        const response = await axios.get("https://vikvok-anldg2io3q-ew.a.run.app/originalvoices/"+id);
-        commit('setVoices', response.data)
+        commit
+    }, id) {
+        const response = await axios.get("https://vikvok-anldg2io3q-ew.a.run.app/originalvoices/" + id);
+        commit('setOneVoice', response.data)
     }
 }
 

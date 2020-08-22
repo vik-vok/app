@@ -1,11 +1,10 @@
 <template>
     <div class="wrapper">
         <div class="first">
-            <!-- <img src="" alt="Avatar">  -->
         </div>
         <div class="second">
             <div class="second-inner second-header">
-                <router-link v-bind:to="'/voices/' + voice.voiceid">
+                <router-link v-bind:to="'/voices/' + voice.id">
                 <span>{{voice.name}}</span>
                 </router-link>
                 
