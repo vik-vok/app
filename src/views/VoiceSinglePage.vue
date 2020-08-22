@@ -1,8 +1,6 @@
 <template>
     <div>
-        <div class="player">
-            <VoicePlayer :voice=voice />
-        </div>
+        <VoicePlayer v-if="voice" class="player" :voice=voice />
     </div>
 </template> 
 
