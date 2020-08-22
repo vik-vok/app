@@ -17,7 +17,9 @@
                     <span>Uploaded by Someone</span>
                 </div>
                 <div class="inner-right">
-                    <span>481 views *</span>
+                    <span>{{voice.views}} views</span>
+                    <span style="margin:0.6rem 0.6rem;">•</span>
+                    <span>15 ❤︎</span>
                 </div>
             </div>
         </div>
@@ -40,13 +42,13 @@ export default {
 
 <style scoped>
 .wrapper {
-    padding: 10px 10px;
+    padding: 10px 30px;
     margin: 25px 0px;
     display: flex;
     height: 200px;
     align-items: center;
-    border: black;
-    border-style: solid;
+    background-color: white;
+    border-radius: 30px;
 }
 
 .second{
