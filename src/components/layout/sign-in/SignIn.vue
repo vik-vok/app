@@ -1,9 +1,9 @@
 <template>
   <div>
     <nav class="main-nav">
-      <a v-if="!user.loggedIn" class="cd-signin" >Sign in</a>
+      <button v-if="!user.loggedIn" type="button" class="btn btn-dark" >Sign in</button>
     </nav>
-      <a v-on:click="signOut" v-if="user.loggedIn" class="cd-signin" >Sign Out</a>
+      <button v-on:click="signOut" v-if="user.loggedIn"  type="button" class="btn btn-dark">Sign Out</button>
     
     <div class="cd-user-modal">
       <!-- this is the entire modal form, including the background -->

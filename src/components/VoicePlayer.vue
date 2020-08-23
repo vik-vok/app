@@ -64,20 +64,20 @@ export default {
     width: 140px;
     background-size: cover;
     background-position: center center;
-    /* background-image: url("https://avatarfiles.alphacoders.com/121/121989.png"); */
 }
-
 
 audio{
     width: 100%;
 }
 
-
 .second-header{
     float: left;
     font-size: 30px;
 }
-
+.second-header a {
+    text-decoration: none; 
+    color: black;
+}
 .second-inner{
     height: 33%;
 }
@@ -87,5 +87,29 @@ audio{
 
 .inner-right{
     float: right;
+}
+
+@media only screen and (max-width: 800px) {
+    .wrapper{
+        padding: 10px 10px;
+
+    }
+    .first {
+        height: 60px;
+        width: 60px;
+    }
+
+    .inner-right{
+        float: left;
+    }
+
+    audio{
+        width: 100%;
+    }
+
+    .second-header{
+        float: left;
+        font-size: 20px;
+    }
 }
 </style>

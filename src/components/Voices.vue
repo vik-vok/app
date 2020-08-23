@@ -35,6 +35,7 @@ export default {
 
 <style scoped>
 .player{
+    margin: auto;
     width: 1200px;
     max-width: 90%;
 }
