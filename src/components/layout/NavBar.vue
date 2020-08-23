@@ -8,16 +8,10 @@
         >
           Home
         </router-link> |
-        <router-link
-          class="header-navigation-option"
-          to="/about"
-        >
+        <router-link class="header-navigation-option" to="/about">
           About
         </router-link> |
-        <router-link
-          class="header-navigation-option"
-          to="/voices"
-        >
+        <router-link class="header-navigation-option" to="/voices" >
           Voices
         </router-link>
       </div>
@@ -34,7 +28,7 @@ export default {
   name: "NavBar",
   components: {
     SignIn
-  }
+  },
 }
 </script>
 

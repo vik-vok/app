@@ -1,10 +1,9 @@
 <template>
   <div>
     <nav class="main-nav">
-      <a
-        class="cd-signin"
-      >Sign in</a>
+      <a v-if="!user.loggedIn" class="cd-signin" >Sign in</a>
     </nav>
+      <a v-on:click="signOut" v-if="user.loggedIn" class="cd-signin" >Sign Out</a>
     
     <div class="cd-user-modal">
       <!-- this is the entire modal form, including the background -->
@@ -17,7 +16,7 @@
 
         <div id="cd-login">
           <!-- log in form -->
-          <form class="cd-form" @submit="signIn(email, password)">
+          <form class="cd-form" >
             <p class="fieldset">
               <label
                 class="image-replace cd-email"
@@ -53,11 +52,7 @@
             </p>
 
             <p class="fieldset">
-              <input
-                class="full-width"
-                type="submit"
-                value="Login"
-              >
+              <input v-on:click="signIn" class="full-width" type="submit" value="Login">
             </p>
             <hr class="separator">
             <SocialSignIns />
@@ -66,7 +61,7 @@
 
         <div id="cd-signup">
           <!-- sign up form -->
-          <form class="cd-form"  @submit="signUp(email, password, username)">
+          <form class="cd-form" >
             <p class="fieldset">
               <label
                 class="image-replace cd-username"
@@ -83,36 +78,15 @@
             </p>
 
             <p class="fieldset">
-              <label
-                class="image-replace cd-email"
-                for="signup-email"
-              >E-mail</label>
-              <input
-                v-model="email"
-                class="full-width has-padding has-border"
-                id="signup-email"
-                type="email"
-                placeholder="E-mail"
-              >
+              <label class="image-replace cd-email" for="signup-email">E-mail</label>
+              <input v-model="email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" >
               <span class="cd-error-message">Error message here!</span>
             </p>
 
             <p class="fieldset">
-              <label
-                class="image-replace cd-password"
-                for="signup-password"
-              >Password</label>
-              <input
-                v-model="password"
-                class="full-width has-padding has-border"
-                id="signup-password"
-                type="text"
-                placeholder="Password"
-              >
-              <a
-                href="#0"
-                class="hide-password"
-              >Hide</a>
+              <label class="image-replace cd-password" for="signup-password" >Password</label>
+              <input v-model="password" class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password">
+              <a href="#0" class="hide-password" >Hide</a>
               <span class="cd-error-message">Error message here!</span>
             </p>
 
@@ -125,11 +99,7 @@
             </p>
 
             <p class="fieldset">
-              <input
-                class="full-width has-padding"
-                type="submit"
-                value="Create account"
-              >
+              <input type="submit" class="full-width has-padding" value="Create account" v-on:click="signUp" /> 
             </p>
           </form>
         </div> <!-- cd-signup -->
@@ -183,6 +153,7 @@
 import '@/components/layout/sign-in/sign-in-front.js'
 import handlers from './sign-in'
 import SocialSignIns from './SocialSignIns'
+import { mapGetters } from "vuex";
 
 export default {
   name: "SignIn",
@@ -196,7 +167,11 @@ export default {
   },
   methods:{
     signUp: handlers.SignUp,
-    signIn : handlers.SignIn
+    signIn : handlers.SignIn,
+    signOut : handlers.SignOut
+  },
+  computed: {
+    ...mapGetters({ user: "user" })
   }
 }
 </script>
