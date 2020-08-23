@@ -1,4 +1,5 @@
 import axios from 'axios';
+import api from './APIconfig';
 
 const state = {
     voices: [],
@@ -9,13 +10,14 @@ const actions = {
     async fetchVoices({
         commit
     }) {
-        const response = await axios.get("https://vikvok-anldg2io3q-ew.a.run.app/originalvoices");
+        const response = await axios.get(api.path + "/originalvoices");
         commit('setVoices', response.data)
     },
+    
     async fetchOneVoice({
         commit
     }, id) {
-        const response = await axios.get("https://vikvok-anldg2io3q-ew.a.run.app/originalvoices/" + id);
+        const response = await axios.get(api.path +"/originalvoices/" + id);
         commit('setOneVoice', response.data)
     }
 }

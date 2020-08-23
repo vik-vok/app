@@ -1,9 +1,11 @@
 <template>
   <div>
     <nav class="main-nav">
-      <button v-if="!user.loggedIn" type="button" class="btn btn-dark" >Sign in</button>
+      <button v-if="user == null" type="button" class="btn btn-dark" >Sign in</button>
     </nav>
-      <button v-on:click="signOut" v-if="user.loggedIn"  type="button" class="btn btn-dark">Sign Out</button>
+
+      {{ user.username }}
+      <button v-on:click="signOut" v-if="user != null"  type="button" class="btn btn-dark">Sign Out</button>
     
     <div class="cd-user-modal">
       <!-- this is the entire modal form, including the background -->
@@ -153,7 +155,7 @@
 import '@/components/layout/sign-in/sign-in-front.js'
 import handlers from './sign-in'
 import SocialSignIns from './SocialSignIns'
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "SignIn",
@@ -166,6 +168,7 @@ export default {
     };
   },
   methods:{
+    ...mapActions(['registerUser']),
     signUp: handlers.SignUp,
     signIn : handlers.SignIn,
     signOut : handlers.SignOut

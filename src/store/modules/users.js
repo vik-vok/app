@@ -1,43 +1,45 @@
-// import axios from 'axios';
+import axios from 'axios';
+import api from './APIconfig';
 
 const state = {
-    user: {
-        loggedIn: false,
-        data: null
-    }
+    user: null
 }
 
 const actions = {
-    fetchUser({
+    async fetchUser({
         commit
     }, user) {
-        commit("SET_LOGGED_IN", user !== null);
+        // Change user value
+        const response = await axios.get(api.path + "/users/" + user.uid);
+        
         if (user) {
-            commit("SET_USER", {
-                displayName: user.displayName,
-                email: user.email
-            });
+            commit("setUser", response.data);
         } else {
-            commit("SET_USER", null);
+            commit("setUser", null);
         }
+    },
+    async registerUser({
+        commit
+    }, user) {        
+        var data = {
+            id: user.uid,
+            username: user.displayName,
+            email: user.email,
+            photoUrl: user.photoURL,
+            emailVerified: user.emailVerified,
+        }
+        await axios.post(api.path + "/users", data);
+        commit;
     }
 }
 
 const mutations = {
-    SET_LOGGED_IN(state, value) {
-        state.user.loggedIn = value;
-    },
-    SET_USER(state, data) {
-        state.user.data = data;
-    }
+    setUser: (state, user) => (state.user = user)
 }
 
 
 const getters = {
-    user(state) {
-        console.log(state.user)
-        return state.user
-    }
+    user: (state) => state.user
 }
 
 export default {

@@ -1,13 +1,13 @@
 import firebase from 'firebase';
+import store from '@/store'
+
 /**
  * Handles the sign up button press.
  */
 function SignUp(e) {
     firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-        .then(() => {
-                this.$router.go({
-                    path: this.$router.path
-                });
+        .then((result) => {
+                store.dispatch("registerUser", result.user);
             },
             err => {
                 alert(err.message);
@@ -59,15 +59,10 @@ function SignInProvider(e, c) {
     }
     firebase.auth().signInWithPopup(provider)
         .then((result) => {
-            var token = result.credential.accessToken;
-            var user = result.user;
-
-            console.log(token)
-            console.log(user)
-
-            this.$router.go({
-                path: this.$router.path
-            });
+            store.dispatch("registerUser", result.user)
+                .then(() => this.$router.go({
+                    path: this.$router.path
+                }));
         }).catch(function (err) {
             alert(err.message);
         });
