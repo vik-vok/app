@@ -6,19 +6,19 @@
 </template>
 
 <script>
-import NavBar from './components/layout/NavBar';
-import Footer from '@/components/layout/Footer';
+import NavBar from "./components/layout/NavBar";
+import Footer from "@/components/layout/Footer";
 
 export default {
   name: "App",
   components: {
     NavBar,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 
-<style >
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

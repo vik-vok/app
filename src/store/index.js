@@ -1,13 +1,13 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import voices from './modules/voices'
-import users from './modules/users'
+import Vue from "vue";
+import Vuex from "vuex";
+import voices from "./modules/voices";
+import users from "./modules/users";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-  modules:{
+  modules: {
     voices,
-    users
-  }
-})
+    users,
+  },
+});

@@ -1,48 +1,127 @@
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
 
 /* -------------------------------- 
 
@@ -54,7 +133,9 @@ html * {
   -moz-osx-font-smoothing: grayscale;
 }
 
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -75,12 +156,14 @@ img {
   max-width: 100%;
 }
 
-input, textarea {
+input,
+textarea {
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
 }
-input::-ms-clear, textarea::-ms-clear {
+input::-ms-clear,
+textarea::-ms-clear {
   display: none;
 }
 
@@ -99,12 +182,12 @@ input::-ms-clear, textarea::-ms-clear {
 Main components 
 
 -------------------------------- */
-header[role=banner] {
+header[role="banner"] {
   position: relative;
   height: 50px;
   background: #343642;
 }
-header[role=banner] #cd-logo {
+header[role="banner"] #cd-logo {
   float: left;
   margin: 4px 0 0 5%;
   /* reduce logo size on mobile and make sure it is left aligned with the transform-origin property */
@@ -119,20 +202,20 @@ header[role=banner] #cd-logo {
   -o-transform: scale(0.8);
   transform: scale(0.8);
 }
-header[role=banner] #cd-logo img {
+header[role="banner"] #cd-logo img {
   display: block;
 }
-header[role=banner]::after {
+header[role="banner"]::after {
   /* clearfix */
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
 @media only screen and (min-width: 768px) {
-  header[role=banner] {
+  header[role="banner"] {
     height: 80px;
   }
-  header[role=banner] #cd-logo {
+  header[role="banner"] #cd-logo {
     margin: 20px 0 0 5%;
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -179,10 +262,11 @@ header[role=banner]::after {
     line-height: normal;
     background: transparent;
   }
-  .main-nav a.cd-signin, .main-nav a.cd-signup {
+  .main-nav a.cd-signin,
+  .main-nav a.cd-signup {
     color: white;
     cursor: pointer;
-    padding: .6em 1em;
+    padding: 0.6em 1em;
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50em;
     margin: 0px 5px;
@@ -233,7 +317,7 @@ xsigin/signup popup
   position: relative;
   width: 90%;
   max-width: 500px;
-  background: #FFF;
+  background: #fff;
   margin: 3em auto 4em;
   cursor: auto;
   border-radius: 1.5em;
@@ -274,7 +358,7 @@ xsigin/signup popup
   color: #809191;
 }
 .cd-user-modal-container .cd-switcher a.selected {
-  background: #FFF;
+  background: #fff;
   color: #505260;
 }
 @media only screen and (min-width: 600px) {
@@ -287,9 +371,9 @@ xsigin/signup popup
   }
 }
 
-label{
-	color: #809194;
-  margin: 0 5px
+label {
+  color: #809194;
+  margin: 0 5px;
 }
 
 .cd-form {
@@ -358,15 +442,15 @@ label{
 .cd-form input.has-error {
   border: 1px solid #d76666;
 }
-.cd-form input[type=password] {
+.cd-form input[type="password"] {
   /* space left for the HIDE button */
   padding-right: 65px;
 }
-.cd-form input[type=submit] {
+.cd-form input[type="submit"] {
   padding: 16px 0;
   cursor: pointer;
   background: #2f889a;
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
   border: none;
   -webkit-appearance: none;
@@ -375,7 +459,8 @@ label{
   -o-appearance: none;
   appearance: none;
 }
-.no-touch .cd-form input[type=submit]:hover, .no-touch .cd-form input[type=submit]:focus {
+.no-touch .cd-form input[type="submit"]:hover,
+.no-touch .cd-form input[type="submit"]:focus {
   background: #3599ae;
   outline: none;
 }
@@ -403,9 +488,9 @@ label{
   left: -5px;
   bottom: -35px;
   background: rgba(215, 102, 102, 0.9);
-  padding: .8em;
+  padding: 0.8em;
   z-index: 2;
-  color: #FFF;
+  color: #fff;
   font-size: 13px;
   font-size: 0.8125rem;
   border-radius: 1.5em;
@@ -419,7 +504,7 @@ label{
 }
 .cd-form .cd-error-message::after {
   /* triangle */
-  content: '';
+  content: "";
   position: absolute;
   left: 22px;
   bottom: 100%;
@@ -452,7 +537,7 @@ label{
   .cd-form input.has-padding {
     padding: 12px 20px 12px 50px;
   }
-  .cd-form input[type=submit] {
+  .cd-form input[type="submit"] {
     padding: 12px 0;
   }
 }
@@ -463,6 +548,7 @@ label{
   font-size: 0.875rem;
   line-height: 1.4;
   text-align: center;
+  color: black;
 }
 @media only screen and (min-width: 600px) {
   .cd-form-message {
@@ -471,16 +557,13 @@ label{
 }
 
 .cd-form-bottom-message {
-  position: absolute;
+  font-size: 0.875rem;
   width: 100%;
   left: 0;
-  bottom: -30px;
   text-align: center;
   font-size: 14px;
-  font-size: 0.875rem;
 }
 .cd-form-bottom-message a {
-  color: #FFF;
   text-decoration: underline;
 }
 
@@ -503,17 +586,42 @@ label{
   }
 }
 
-#cd-login, #cd-signup, #cd-reset-password {
+#cd-login,
+#cd-signup,
+#cd-reset-password {
   display: none;
 }
 
-#cd-login.is-selected, #cd-signup.is-selected, #cd-reset-password.is-selected {
+#cd-login.is-selected,
+#cd-signup.is-selected,
+#cd-reset-password.is-selected {
   display: block;
 }
-
 
 hr.separator {
   border: 0;
   height: 2px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  margin: 2rem;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.cd-form {
+  padding: 40px;
+}
+
+.loader {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.err_msg {
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+  width: 100%;
 }

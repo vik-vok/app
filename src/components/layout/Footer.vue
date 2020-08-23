@@ -14,40 +14,22 @@
           </ul>
           <ul class="list-unstyled socila-list">
             <li>
-              <img
-                src="http://placehold.it/48x48"
-                alt=""
-              >
+              <img src="http://placehold.it/48x48" alt="" />
             </li>
             <li>
-              <img
-                src="http://placehold.it/48x48"
-                alt=""
-              >
+              <img src="http://placehold.it/48x48" alt="" />
             </li>
             <li>
-              <img
-                src="http://placehold.it/48x48"
-                alt=""
-              >
+              <img src="http://placehold.it/48x48" alt="" />
             </li>
             <li>
-              <img
-                src="http://placehold.it/48x48"
-                alt=""
-              >
+              <img src="http://placehold.it/48x48" alt="" />
             </li>
             <li>
-              <img
-                src="http://placehold.it/48x48"
-                alt=""
-              >
+              <img src="http://placehold.it/48x48" alt="" />
             </li>
             <li>
-              <img
-                src="http://placehold.it/48x48"
-                alt=""
-              >
+              <img src="http://placehold.it/48x48" alt="" />
             </li>
           </ul>
         </div>
@@ -59,30 +41,18 @@
               <img
                 src="@/assets/images/maintainers/CSenshi.png"
                 class="rounded"
-              >
+              />
             </div>
-            <div
-              class="media-body"
-              style="text-align: left;"
-            >
-              <a
-                href="https://github.com/CSenshi"
-                class="media-heading"
-              >
+            <div class="media-body" style="text-align: left;">
+              <a href="https://github.com/CSenshi" class="media-heading">
                 <h4 class="media-heading">CSenshi</h4>
               </a>
               <p>Saba Pochkhua</p>
             </div>
           </div>
           <div class="media">
-            <div
-              class="media-body"
-              style="text-align: right;"
-            >
-              <a
-                href="https://github.com/nikalosa"
-                class="media-heading"
-              >
+            <div class="media-body" style="text-align: right;">
+              <a href="https://github.com/nikalosa" class="media-heading">
                 <h4 class="media-heading">NikaLosa</h4>
               </a>
               <p>Nika Losaberidze</p>
@@ -91,7 +61,7 @@
               <img
                 src="@/assets/images/maintainers/NikaLosa.jpg"
                 class="rounded"
-              >
+              />
             </div>
           </div>
         </div>
@@ -102,32 +72,32 @@
             class="img-thumbnail"
             src="@/assets/images/built-by/cloud-functions.png"
             alt=""
-          >
+          />
           <img
             class="img-thumbnail"
             src="@/assets/images/built-by/cloud-endpoints.png"
             alt=""
-          >
+          />
           <img
             class="img-thumbnail"
             src="@/assets/images/built-by/cloud-datastore.png"
             alt=""
-          >
+          />
           <img
             class="img-thumbnail"
             src="@/assets/images/built-by/vue.png"
             alt=""
-          >
+          />
           <img
             class="img-thumbnail"
             src="@/assets/images/built-by/cloud-pubsub.png"
             alt=""
-          >
+          />
           <img
             class="img-thumbnail"
             src="@/assets/images/built-by/cloud-firebase.png"
             alt=""
-          >
+          />
         </div>
       </div>
     </div>
@@ -138,17 +108,16 @@
 </template>
 
 <script>
-
 export default {
   name: "Footer",
-}
+};
 </script>
 
 <style scoped>
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
 
 .media-body {
-  margin-left: 10px; 
+  margin-left: 10px;
   margin-right: 10px;
 }
 
