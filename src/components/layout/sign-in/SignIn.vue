@@ -3,10 +3,10 @@
     <nav class="main-nav">
       <button v-if="user == null" type="button" class="btn btn-dark" >Sign in</button>
     </nav>
-
+    <div v-if="user != null">
       {{ user.username }}
-      <button v-on:click="signOut" v-if="user != null"  type="button" class="btn btn-dark">Sign Out</button>
-    
+      <button v-on:click="signOut"  type="button" class="btn btn-dark">Sign Out</button>
+    </div>
     <div class="cd-user-modal">
       <!-- this is the entire modal form, including the background -->
       <div class="cd-user-modal-container">

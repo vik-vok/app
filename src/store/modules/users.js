@@ -10,9 +10,8 @@ const actions = {
         commit
     }, user) {
         // Change user value
-        const response = await axios.get(api.path + "/users/" + user.uid);
-        
         if (user) {
+            const response = await axios.get(api.path + "/users/" + user.uid);
             commit("setUser", response.data);
         } else {
             commit("setUser", null);
