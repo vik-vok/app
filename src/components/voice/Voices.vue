@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import VoicePlayer from "@/components/VoicePlayer.vue";
+import VoicePlayer from "@/components/voice/VoicePlayer.vue";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -36,7 +36,6 @@ export default {
 <style scoped>
 .player {
   margin: auto;
-  width: 1200px;
-  max-width: 90%;
+  width: 100%;
 }
 </style>

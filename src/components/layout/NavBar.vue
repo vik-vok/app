@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-    <nav class="navbar navbar-dark bg-dark nav-custom">
+    <nav class="navbar navbar-dark nav-custom">
       <div>
         <router-link class="header-navigation-option" to="/">
           Home
@@ -47,7 +47,7 @@ export default {
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: black;
 }
 
 #nav-in {

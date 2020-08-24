@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Voices from "@/components/Voices.vue";
+import Voices from "@/components/voice/Voices";
 
 export default {
   components: {

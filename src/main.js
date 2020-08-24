@@ -4,6 +4,13 @@ import router from "./router";
 import store from "./store";
 import firebase from "firebase";
 import "./components/firebaseinit.js";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+import VueRecord from "@codekraft-studio/vue-record";
+
+Vue.use(VueRecord);
+
+import { ModalPlugin } from "bootstrap-vue";
+Vue.use(ModalPlugin);
 
 Vue.config.productionTip = false;
 

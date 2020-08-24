@@ -1,110 +1,113 @@
 <template>
-  <footer class="mt-auto">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <h3>Site Map</h3>
-          <ul class="list-unstyled three-column">
-            <li>Home</li>
-            <li>Services</li>
-            <li>About</li>
-            <li>Code</li>
-            <li>Design</li>
-            <li>Host</li>
-          </ul>
-          <ul class="list-unstyled socila-list">
-            <li>
-              <img src="http://placehold.it/48x48" alt="" />
-            </li>
-            <li>
-              <img src="http://placehold.it/48x48" alt="" />
-            </li>
-            <li>
-              <img src="http://placehold.it/48x48" alt="" />
-            </li>
-            <li>
-              <img src="http://placehold.it/48x48" alt="" />
-            </li>
-            <li>
-              <img src="http://placehold.it/48x48" alt="" />
-            </li>
-            <li>
-              <img src="http://placehold.it/48x48" alt="" />
-            </li>
-          </ul>
-        </div>
+  <div>
+    <hr />
+    <footer class="mt-auto">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <h3>Site Map</h3>
+            <ul class="list-unstyled three-column">
+              <li>Home</li>
+              <li>Services</li>
+              <li>About</li>
+              <li>Code</li>
+              <li>Design</li>
+              <li>Host</li>
+            </ul>
+            <ul class="list-unstyled socila-list">
+              <li>
+                <img src="http://placehold.it/48x48" alt="" />
+              </li>
+              <li>
+                <img src="http://placehold.it/48x48" alt="" />
+              </li>
+              <li>
+                <img src="http://placehold.it/48x48" alt="" />
+              </li>
+              <li>
+                <img src="http://placehold.it/48x48" alt="" />
+              </li>
+              <li>
+                <img src="http://placehold.it/48x48" alt="" />
+              </li>
+              <li>
+                <img src="http://placehold.it/48x48" alt="" />
+              </li>
+            </ul>
+          </div>
 
-        <div class="col-lg-4 col-md-6">
-          <h3>Maintainers</h3>
-          <div class="media">
-            <div class="image-cropper">
-              <img
-                src="@/assets/images/maintainers/CSenshi.png"
-                class="rounded"
-              />
+          <div class="col-lg-4 col-md-6">
+            <h3>Maintainers</h3>
+            <div class="media">
+              <div class="image-cropper">
+                <img
+                  src="@/assets/images/maintainers/CSenshi.png"
+                  class="rounded"
+                />
+              </div>
+              <div class="media-body" style="text-align: left;">
+                <a href="https://github.com/CSenshi" class="media-heading">
+                  <h4 class="media-heading">CSenshi</h4>
+                </a>
+                <p>Saba Pochkhua</p>
+              </div>
             </div>
-            <div class="media-body" style="text-align: left;">
-              <a href="https://github.com/CSenshi" class="media-heading">
-                <h4 class="media-heading">CSenshi</h4>
-              </a>
-              <p>Saba Pochkhua</p>
+            <div class="media">
+              <div class="media-body" style="text-align: right;">
+                <a href="https://github.com/nikalosa" class="media-heading">
+                  <h4 class="media-heading">NikaLosa</h4>
+                </a>
+                <p>Nika Losaberidze</p>
+              </div>
+              <div class="image-cropper">
+                <img
+                  src="@/assets/images/maintainers/NikaLosa.jpg"
+                  class="rounded"
+                />
+              </div>
             </div>
           </div>
-          <div class="media">
-            <div class="media-body" style="text-align: right;">
-              <a href="https://github.com/nikalosa" class="media-heading">
-                <h4 class="media-heading">NikaLosa</h4>
-              </a>
-              <p>Nika Losaberidze</p>
-            </div>
-            <div class="image-cropper">
-              <img
-                src="@/assets/images/maintainers/NikaLosa.jpg"
-                class="rounded"
-              />
-            </div>
-          </div>
-        </div>
 
-        <div class="col-lg-4">
-          <h3>Built By</h3>
-          <img
-            class="img-thumbnail"
-            src="@/assets/images/built-by/cloud-functions.png"
-            alt=""
-          />
-          <img
-            class="img-thumbnail"
-            src="@/assets/images/built-by/cloud-endpoints.png"
-            alt=""
-          />
-          <img
-            class="img-thumbnail"
-            src="@/assets/images/built-by/cloud-datastore.png"
-            alt=""
-          />
-          <img
-            class="img-thumbnail"
-            src="@/assets/images/built-by/vue.png"
-            alt=""
-          />
-          <img
-            class="img-thumbnail"
-            src="@/assets/images/built-by/cloud-pubsub.png"
-            alt=""
-          />
-          <img
-            class="img-thumbnail"
-            src="@/assets/images/built-by/cloud-firebase.png"
-            alt=""
-          />
+          <div class="col-lg-4">
+            <h3>Built By</h3>
+            <img
+              class="img-thumbnail"
+              src="@/assets/images/built-by/cloud-functions.png"
+              alt=""
+            />
+            <img
+              class="img-thumbnail"
+              src="@/assets/images/built-by/cloud-endpoints.png"
+              alt=""
+            />
+            <img
+              class="img-thumbnail"
+              src="@/assets/images/built-by/cloud-datastore.png"
+              alt=""
+            />
+            <img
+              class="img-thumbnail"
+              src="@/assets/images/built-by/vue.png"
+              alt=""
+            />
+            <img
+              class="img-thumbnail"
+              src="@/assets/images/built-by/cloud-pubsub.png"
+              alt=""
+            />
+            <img
+              class="img-thumbnail"
+              src="@/assets/images/built-by/cloud-firebase.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="copyright text-center">
-      Copyright &copy; 202 <span>vik-vok</span>
-    </div>
-  </footer>
+      <div class="copyright text-center">
+        Copyright &copy; 202 <span>vik-vok</span>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -135,13 +138,20 @@ img.rounded {
   border-radius: 50%;
   height: 70px;
   width: 70px;
+  margin: 0 auto;
 }
 
 footer {
   bottom: 0;
-  width: 100%;
-  background: #222;
-  color: #aaa;
+  width: 80%;
+  background: #eee6e6;
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
+
+  display: table;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 footer a {
@@ -195,12 +205,19 @@ footer .img-thumbnail {
 
 footer .copyright {
   padding: 5px 0;
-  background: #333;
-  /* margin-top: 20px; */
+  background: #eee6e6;
   font-size: 15px;
 }
 
 footer .copyright span {
   color: #0894d1;
+}
+
+hr {
+  width: 80%;
+  border: 1px solid;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border-radius: 5px;
 }
 </style>

@@ -25,6 +25,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: lightgray;
+  background-color: #d9afd9;
+  background-image: linear-gradient(to bottom, #efa2b9, #f2e9e9);
 }
 </style>

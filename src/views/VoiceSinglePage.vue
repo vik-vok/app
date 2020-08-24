@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import VoicePlayer from "@/components/VoicePlayer.vue";
+import VoicePlayer from "@/components/voice/VoicePlayer.vue";
 import { mapGetters, mapActions } from "vuex";
 
 export default {

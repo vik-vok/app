@@ -7,9 +7,12 @@
           <span>{{ voice.name }}</span>
         </router-link>
       </div>
-      <audio controls class="second-inner">
-        <source :src="voice.path" type="audio/ogg" />
-      </audio>
+      <div class="second-inner audio-container">
+        <audio controls>
+          <source :src="voice.path" type="audio/ogg" />
+        </audio>
+        <VoiceRecorder :voice="voice" class="second-inner-voice" />
+      </div>
       <div class="second-inner">
         <div class="inner-left">
           <span>Uploaded by Someone</span>
@@ -25,6 +28,7 @@
 </template>
 
 <script>
+import VoiceRecorder from "./VoiceRecorder";
 export default {
   name: "VoicePlayer",
   props: {
@@ -34,6 +38,9 @@ export default {
     backgroundAvatar: function () {
       return { "background-image": "url(" + this.voice.avatar + ")" };
     },
+  },
+  components: {
+    VoiceRecorder,
   },
 };
 </script>
@@ -45,13 +52,8 @@ export default {
   display: flex;
   height: 180px;
   align-items: center;
-  background-color: white;
+  background-color: #eee6e6;
   border-radius: 30px;
-}
-
-.second {
-  margin: 20px;
-  flex: 1;
 }
 
 .first {
@@ -67,23 +69,33 @@ audio {
   width: 100%;
 }
 
+.second {
+  margin: 20px;
+  flex: 1;
+}
+
 .second-header {
-  float: left;
+  text-align: left;
   font-size: 23px;
   margin-bottom: 10px;
 }
+
 .second-header a {
   text-decoration: none;
   color: black;
 }
 .second-inner {
-  /* height: 33%; */
 }
+
 .inner-left {
   float: left;
 }
 
 .inner-right {
+  float: right;
+}
+
+.second-inner-voice {
   float: right;
 }
 
@@ -96,6 +108,10 @@ audio {
     width: 60px;
   }
 
+  .second {
+    margin: 5px;
+  }
+
   .inner-right {
     float: left;
   }
@@ -104,9 +120,20 @@ audio {
     width: 100%;
   }
 
+  .audio-container {
+    display: block !important;
+  }
   .second-header {
     float: left;
     font-size: 20px;
   }
+}
+
+.audio-container {
+  display: flex;
+}
+
+.audio-container div {
+  margin: 0 10px;
 }
 </style>
