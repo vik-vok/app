@@ -103,11 +103,17 @@ function SignInProvider(e, c) {
     .auth()
     .signInWithPopup(provider)
     .then((result) => {
-      store.dispatch("registerUser", result.user).then(() =>
+      if (result.additionalUserInfo.isNewUser) {
+        store.dispatch("registerUser", result.user).then(() =>
+          this.$router.go({
+            path: this.$router.path,
+          })
+        );
+      } else {
         this.$router.go({
           path: this.$router.path,
-        })
-      );
+        });
+      }
     })
     .catch(function (err) {
       alert(err.message);
