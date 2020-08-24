@@ -10,7 +10,17 @@ function SignUp(e) {
     .createUserWithEmailAndPassword(this.email, this.password)
     .then(
       (result) => {
-        store.dispatch("registerUser", result.user);
+        result.user
+          .updateProfile({
+            displayName: this.username,
+          })
+          .then(() => {
+            store.dispatch("registerUser", result.user).then(() =>
+              this.$router.go({
+                path: this.$router.path,
+              })
+            );
+          });
       },
       (err) => {
         switch (err.code) {
