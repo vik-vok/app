@@ -43,7 +43,7 @@ export default {
   padding: 10px 30px;
   margin: 25px 0px;
   display: flex;
-  height: 200px;
+  height: 180px;
   align-items: center;
   background-color: white;
   border-radius: 30px;
@@ -52,7 +52,6 @@ export default {
 .second {
   margin: 20px;
   flex: 1;
-  height: 180px;
 }
 
 .first {
@@ -70,14 +69,15 @@ audio {
 
 .second-header {
   float: left;
-  font-size: 30px;
+  font-size: 23px;
+  margin-bottom: 10px;
 }
 .second-header a {
   text-decoration: none;
   color: black;
 }
 .second-inner {
-  height: 33%;
+  /* height: 33%; */
 }
 .inner-left {
   float: left;
