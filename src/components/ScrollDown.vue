@@ -1,7 +1,9 @@
 <template>
   <div>
     <section id="section01" class="demo">
-      <a href="#voices-start" class="scroll-down-button"><span></span>Scroll</a>
+      <a :href="'#' + scrollTo" class="scroll-down-button"
+        ><span></span>Scroll</a
+      >
     </section>
   </div>
 </template>

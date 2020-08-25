@@ -54,7 +54,7 @@ export default {
 }
 
 .center {
-  padding: 100px 0;
+  padding: 100px 0 0 0;
   margin: 0 auto;
 }
 

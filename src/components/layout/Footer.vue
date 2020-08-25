@@ -219,5 +219,6 @@ hr {
   margin-top: 60px;
   margin-bottom: 60px;
   border-radius: 5px;
+  border-color: gray;
 }
 </style>
