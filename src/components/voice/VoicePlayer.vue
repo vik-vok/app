@@ -85,6 +85,7 @@ audio {
   color: black;
 }
 .second-inner {
+  margin: 10px 0;
 }
 
 .inner-left {

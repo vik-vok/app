@@ -1,8 +1,9 @@
 <template>
   <div>
-    <b-button v-b-modal="'modal-' + voice.id">
-      <div class="open-modal"></div>
-    </b-button>
+    <button
+      class="open-modal trigger-modal-button"
+      v-b-modal="'modal-' + voice.id"
+    ></button>
     <b-modal
       :id="'modal-' + voice.id"
       class="hide-backdrop"
@@ -66,6 +67,10 @@ export default {
 </script>
 
 <style scoped>
+.trigger-modal-button {
+  outline: none;
+}
+
 .modal-wrapper {
   display: flex;
   flex-direction: column;
