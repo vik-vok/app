@@ -19,9 +19,11 @@
         <img class="welcome-img" src="../assets/images/welcome.png" />
       </div>
     </div>
+    <ScrollDown class="scroll-class" scrollTo="voices-start" />
+
     <div class="voices-popular">
       <div class="voices-header">
-        <h1 class="voices-popular-header">Popular</h1>
+        <h1 id="voices-start" class="voices-popular-header">Popular</h1>
         <router-link class="see" to="/voices">
           <a href="#" class="button-m">
             <strong>All</strong>
@@ -36,15 +38,21 @@
 
 <script>
 import Voices from "@/components/voice/Voices";
+import ScrollDown from "@/components/ScrollDown";
 export default {
   name: "Home",
   components: {
     Voices,
+    ScrollDown,
   },
 };
 </script>
 
 <style scoped>
+.scroll-class {
+  margin: 100px;
+}
+
 .center {
   padding: 100px 0;
   margin: 0 auto;
@@ -52,7 +60,8 @@ export default {
 
 .line-img {
   width: 100%;
-  margin: 20px 0;
+  margin: 40px 0 20px 0;
+  transform: rotate(180deg);
 }
 
 .welcome {
@@ -205,9 +214,16 @@ export default {
 }
 
 @media only screen and (max-width: 800px) {
+  .welcome {
+    padding: 0 0 80px 0;
+  }
   .voices-popular {
     max-width: 95%;
     margin: 0 auto;
+  }
+
+  .scroll-class {
+    display: none;
   }
 }
 </style>
