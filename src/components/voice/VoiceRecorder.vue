@@ -6,12 +6,12 @@
     ></button>
     <b-modal
       :id="'modal-' + voice.id"
-      class="hide-backdrop"
+      class="modal-class"
       title="Record Voice"
+      hide-footer="true"
     >
       <div class="modal-wrapper">
         <h3 class="">Press the button to record</h3>
-
         <div class="record-settings">
           <vue-record-audio
             :mode="recordMode.video"
@@ -24,8 +24,22 @@
           <audio :src="recordedVoice.src" controls />
         </div>
         <div>
-          <button v-if="recordedVoice" @click="removeRecord()">Delete</button>
-          <button v-if="recordedVoice" @click="submitData()">Submit</button>
+          <button
+            type="button"
+            class="custom-button-recorder btn"
+            v-if="recordedVoice"
+            @click="removeRecord()"
+          >
+            Delete
+          </button>
+          <button
+            type="button"
+            class="custom-button-recorder btn"
+            v-if="recordedVoice"
+            @click="submitData()"
+          >
+            Submit
+          </button>
         </div>
       </div>
     </b-modal>
@@ -67,6 +81,15 @@ export default {
 </script>
 
 <style scoped>
+.modal-class {
+  background-color: #e36c74;
+}
+.custom-button-recorder {
+  margin: 10px;
+  background-color: #f8d5d7;
+  border-radius: 15px;
+}
+
 .trigger-modal-button {
   outline: none;
 }
@@ -84,5 +107,9 @@ export default {
   background-size: cover;
   background-position: center center;
   background-image: url("../../assets/images/record.png");
+}
+
+.modal-open footer {
+  display: none;
 }
 </style>

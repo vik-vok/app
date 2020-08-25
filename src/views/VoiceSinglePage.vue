@@ -1,6 +1,8 @@
 <template>
   <div>
-    <VoicePlayer v-if="voice" class="player" :voice="voice" />
+    <div class="wrapper">
+      <VoicePlayer v-if="voice" class="player" :voice="voice" />
+    </div>
   </div>
 </template>
 
@@ -30,7 +32,8 @@ export default {
 </script>
 
 <style scoped>
-.player {
-  width: 800px;
+.wrapper {
+  margin: 100px auto;
+  width: 80%;
 }
 </style>
