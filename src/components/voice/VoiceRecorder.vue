@@ -6,9 +6,9 @@
     ></button>
     <b-modal
       :id="'modal-' + voice.id"
+      :hide-footer="true"
       class="modal-class"
       title="Record Voice"
-      hide-footer="true"
     >
       <div class="modal-wrapper">
         <h3 class="">Press the button to record</h3>
@@ -60,6 +60,7 @@ export default {
         video: "press",
       },
       recordedVoice: null,
+      data: null,
     };
   },
   methods: {
@@ -70,11 +71,19 @@ export default {
       console.log("Got a stream object:", stream);
     },
     onResult(data) {
+      this.data = data;
       this.recordedVoice = { src: window.URL.createObjectURL(data) };
     },
     submitData() {
-      var url = "https://vikvok-anldg2io3q-ew.a.run.app/save-voice-function";
-      axios.post(url, this.recordedVoice);
+      var url = "https://vikvok-anldg2io3q-ew.a.run.app/recordedvoices";
+
+      var fd = new FormData();
+      fd.append("audio_data", this.data);
+      axios.post(url, fd, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
     },
   },
 };
