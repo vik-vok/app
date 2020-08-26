@@ -1,6 +1,23 @@
 <template>
   <div class="comments-wrapper">
     <h1>Comments</h1>
+    <div class="scrolling-wrapper-flexbox">
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+      <VoiceMiniPlayer />
+    </div>
     <div v-bind:key="comment.id" v-for="comment in this.voiceComments">
       <Comment class="single-comment" :comment="comment" />
     </div>
@@ -9,14 +26,17 @@
 
 <script>
 import Comment from "./Comment";
+import VoiceMiniPlayer from "./VoiceMiniPlayer";
 
 export default {
   name: "VoiceComments",
   props: {
-    voiceComments: [Object],
+    voiceComments: [],
+    recordedVoices: [],
   },
   components: {
     Comment,
+    VoiceMiniPlayer,
   },
 };
 </script>
@@ -29,5 +49,12 @@ export default {
 
 .single-comment {
   margin: 2% 10%;
+}
+
+/* Side Scroll */
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 </style>

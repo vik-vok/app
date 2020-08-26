@@ -2,7 +2,10 @@
   <div>
     <div class="wrapper">
       <VoicePlayer v-if="voice" class="player" :voice="voice" />
-      <VoiceComments :voiceComments="voiceComments" />
+      <VoiceComments
+        :voiceComments="voiceComments"
+        :recordedVoices="recordedVoices"
+      />
     </div>
   </div>
 </template>
@@ -21,12 +24,17 @@ export default {
   created() {
     this.fetchOneVoice(this.id);
     this.fetchVoiceComments(this.id);
+    this.fetchRecordedVoices();
   },
   methods: {
-    ...mapActions(["fetchOneVoice", "fetchVoiceComments"]),
+    ...mapActions([
+      "fetchOneVoice",
+      "fetchVoiceComments",
+      "fetchRecordedVoices",
+    ]),
   },
   computed: {
-    ...mapGetters(["voice", "voiceComments"]),
+    ...mapGetters(["voice", "voiceComments", "recordedVoices"]),
   },
   components: {
     VoicePlayer,
