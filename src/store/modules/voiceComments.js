@@ -28,11 +28,19 @@ const actions = {
       },
     ]);
   },
+  async addVoiceComment({ commit }, data) {
+    console.log(data);
+    // const response = await Axios.post(api.path + "/comments/")
+    commit("newVoiceComment", data);
+  },
 };
 
 const mutations = {
   setVoiceComments: (state, voiceComments) => {
     state.voiceComments = voiceComments;
+  },
+  newVoiceComment: (state, voiceComment) => {
+    state.voiceComments.unshift(voiceComment);
   },
 };
 

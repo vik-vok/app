@@ -5,6 +5,7 @@
       <VoiceComments
         :voiceComments="voiceComments"
         :recordedVoices="recordedVoices"
+        v-on:addComment="addComment"
       />
     </div>
   </div>
@@ -31,10 +32,30 @@ export default {
       "fetchOneVoice",
       "fetchVoiceComments",
       "fetchRecordedVoices",
+      "addVoiceComment",
     ]),
+    addComment(s) {
+      if (this.user) {
+        var voiceID = this.id;
+        console.log(this.user);
+        var userID = this.user.id;
+        var data = {
+          text: s,
+          voiceID: voiceID,
+          userID: userID,
+        };
+        this.addVoiceComment(data);
+      }
+    },
   },
   computed: {
-    ...mapGetters(["voice", "voiceComments", "recordedVoices"]),
+    ...mapGetters([
+      "user",
+      "fetched",
+      "voice",
+      "voiceComments",
+      "recordedVoices",
+    ]),
   },
   components: {
     VoicePlayer,

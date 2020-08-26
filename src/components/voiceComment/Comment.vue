@@ -2,7 +2,6 @@
   <div>
     <div class="wrapper">
       <div class="first" v-bind:style="[backgroundAvatar]"></div>
-
       <div class="second">
         <div class="second-inner s1">
           <h3>
@@ -13,9 +12,6 @@
           <p>
             {{ comment.text }}
           </p>
-        </div>
-        <div class="second-inner s3">
-          <p>Like</p>
         </div>
       </div>
     </div>
