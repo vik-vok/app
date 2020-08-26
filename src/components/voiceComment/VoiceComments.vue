@@ -86,16 +86,6 @@ h1 {
   overflow-x: auto;
 }
 
-@media only screen and (max-width: 800px) {
-  .scrolling-wrapper-flexbox {
-    margin: 0px;
-  }
-
-  .single-comment {
-    margin: 1% 0% 1% 2%;
-  }
-}
-
 /* New Comment */
 .new-comment {
   margin: 2% 8%;
@@ -146,5 +136,38 @@ h1 {
   border-radius: 20px;
   box-shadow: 5px 5px 5px #eee;
   text-shadow: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .scrolling-wrapper-flexbox {
+    margin: 0px;
+  }
+
+  .single-comment {
+    margin: 1% 0% 1% 2%;
+  }
+
+  .new-comment-f {
+    flex-shrink: 0;
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .new-comment {
+    margin: 1% 0% 1% 2%;
+    padding: 0;
+  }
+  .textarea-class {
+    border-radius: 15px;
+    outline: none;
+    width: 85%;
+    height: 150px;
+    padding: 10px;
+    margin: 0 10px;
+    resize: none;
+  }
 }
 </style>

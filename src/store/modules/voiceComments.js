@@ -40,7 +40,7 @@ const mutations = {
     state.voiceComments = voiceComments;
   },
   newVoiceComment: (state, voiceComment) => {
-    state.voiceComments.unshift(voiceComment);
+    state.voiceComments.push(voiceComment);
   },
 };
 
