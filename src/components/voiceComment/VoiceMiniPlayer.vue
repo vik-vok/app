@@ -4,7 +4,7 @@
       <div class="card-avatar" v-bind:style="[backgroundAvatar]"></div>
       <h5 class="user-name">{{ voice.name }}</h5>
       <div class="button-wrapper">
-        <button class="play-button">Play</button>
+        <button class="play-button play" @click="play($event, voice)"></button>
       </div>
     </div>
   </div>
@@ -16,16 +16,49 @@ export default {
   props: {
     voice: Object,
   },
+  data() {
+    return {
+      curPlaying: null,
+    };
+  },
   computed: {
     backgroundAvatar: () => ({
       "background-image":
         "url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/00d109df-d44c-410d-a510-dfd9d5d61e6c/dao4ad5-fe9ba709-4916-4372-97fa-9e680414693a.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMDBkMTA5ZGYtZDQ0Yy00MTBkLWE1MTAtZGZkOWQ1ZDYxZTZjXC9kYW80YWQ1LWZlOWJhNzA5LTQ5MTYtNDM3Mi05N2ZhLTllNjgwNDE0NjkzYS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.EHNWzLINMtZtLj8iiUGGD8C0G_2ufiZPzD88QTOX7bA)",
     }),
   },
+  methods: {
+    play: function (e, voice) {
+      const button = e.target;
+
+      if (this.curPlaying && this.curPlaying.audio) {
+        this.curPlaying.audio.pause();
+        this.curPlaying = null;
+      } else {
+        var audio = new Audio(voice.path);
+        this.curPlaying = { audio, voice };
+
+        this.curPlaying.audio.play();
+        this.curPlaying.audio.onended = () => {
+          button.classList.toggle("stop");
+          button.classList.toggle("play");
+
+          this.curPlaying = null;
+          this.curPlaying.audio.currentTime = 0;
+        };
+      }
+      button.classList.toggle("stop");
+      button.classList.toggle("play");
+    },
+  },
 };
 </script>
 
 <style scoped>
+.disabled {
+  display: none !important;
+}
+
 .card {
   flex: 0 0 auto;
   margin: 0 40px;
@@ -64,5 +97,15 @@ export default {
   right: 0;
   outline: none;
   margin: auto;
+}
+
+.stop {
+  background: grey;
+}
+.stop::after {
+  content: "Stop";
+}
+.play::after {
+  content: "Play";
 }
 </style>
