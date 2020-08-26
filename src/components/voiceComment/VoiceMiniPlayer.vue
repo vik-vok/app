@@ -2,7 +2,10 @@
   <div>
     <div class="card">
       <div class="card-avatar" v-bind:style="[backgroundAvatar]"></div>
-      <h5>{{ voice.name }}</h5>
+      <h5 class="user-name">{{ voice.name }}</h5>
+      <div class="button-wrapper">
+        <button class="play-button">Play</button>
+      </div>
     </div>
   </div>
 </template>
@@ -26,18 +29,40 @@ export default {
 .card {
   flex: 0 0 auto;
   margin: 0 40px;
-  padding: 40px 0;
+  padding: 15px 0;
   width: 315px;
-  height: 288px;
+  height: 280px;
   border-radius: 30px;
 }
 
 .card-avatar {
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 115px;
+  width: 115px;
   background-size: cover;
   background-position: center center;
   margin: 0 auto;
+}
+
+.user-name {
+  margin: 30px 0;
+}
+
+.play-button {
+  position: absolute;
+  background: #f8bace;
+  border-radius: 11px;
+  width: 150px;
+  height: 40px;
+  color: #ffffff;
+  display: inline-block;
+  font: normal bold "Open Sans", sans-serif;
+  text-align: center;
+  border: none;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  outline: none;
+  margin: auto;
 }
 </style>
