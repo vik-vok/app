@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <hr />
+    <hr class="comment-separator" />
   </div>
 </template>
 
@@ -41,7 +41,7 @@ export default {
 <style scoped>
 .wrapper {
   padding: 10px 30px;
-  margin: 25px 0px;
+  /* margin: 25px 0px; */
   display: flex;
   height: 180px;
   align-items: center;
@@ -50,14 +50,14 @@ export default {
 .first {
   flex-shrink: 0;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   background-size: cover;
   background-position: center center;
 }
 
 .second {
-  margin: 20px;
+  margin: 0 40px;
   flex: 1;
 }
 
@@ -73,6 +73,8 @@ export default {
   color: black;
 }
 
-.seconds .s2 {
+.comment-separator {
+  border-width: 1px;
+  border-color: black;
 }
 </style>

@@ -35,12 +35,13 @@ export default {
 
 <style scoped>
 .comments-wrapper {
-  background-color: #feecf2;
+  background-image: linear-gradient(to bottom, #feecf2, #fdf6f8);
+
   border-radius: 30px;
 }
 
 .single-comment {
-  margin: 2% 10%;
+  margin: 2% 8%;
 }
 h1 {
   padding: 50px 0;
