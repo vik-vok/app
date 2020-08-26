@@ -41,9 +41,8 @@ export default {
 <style scoped>
 .wrapper {
   padding: 10px 30px;
-  /* margin: 25px 0px; */
   display: flex;
-  height: 180px;
+  height: auto;
   align-items: center;
 }
 
@@ -81,5 +80,27 @@ export default {
   background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
   background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
   background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+}
+
+@media only screen and (max-width: 800px) {
+  .wrapper {
+    padding: 0;
+  }
+
+  .first {
+    flex-shrink: 0;
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+  .second {
+    margin: 0 20px;
+  }
 }
 </style>

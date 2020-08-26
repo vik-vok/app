@@ -108,4 +108,10 @@ export default {
 .play::after {
   content: "Play";
 }
+
+@media only screen and (max-width: 800px) {
+  .card {
+    margin: 0 20px;
+  }
+}
 </style>

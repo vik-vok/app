@@ -23,8 +23,8 @@ import VoiceMiniPlayer from "./VoiceMiniPlayer";
 export default {
   name: "VoiceComments",
   props: {
-    voiceComments: [],
-    recordedVoices: [],
+    voiceComments: Array,
+    recordedVoices: Array,
   },
   components: {
     Comment,
@@ -53,5 +53,15 @@ h1 {
   padding: 0 0 20px 0;
   flex-wrap: nowrap;
   overflow-x: auto;
+}
+
+@media only screen and (max-width: 800px) {
+  .scrolling-wrapper-flexbox {
+    margin: 0px;
+  }
+
+  .single-comment {
+    margin: 1% 0% 1% 2%;
+  }
 }
 </style>
