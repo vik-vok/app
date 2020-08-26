@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="comments-wrapper">
     <h1>Comments</h1>
     <div v-bind:key="comment.id" v-for="comment in this.voiceComments">
-      <Comment :comment="comment" />
+      <Comment class="single-comment" :comment="comment" />
     </div>
   </div>
 </template>
@@ -21,4 +21,13 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.comments-wrapper {
+  background-color: #eee6e6;
+  border-radius: 30px;
+}
+
+.single-comment {
+  margin: 2% 10%;
+}
+</style>
