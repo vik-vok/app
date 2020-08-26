@@ -99,8 +99,15 @@ export default {
   margin: auto;
 }
 
+.play-button:hover {
+  background: #f8d4e0;
+}
 .stop {
   background: grey;
+}
+
+.stop:hover {
+  background: black;
 }
 .stop::after {
   content: "Stop";

@@ -20,9 +20,10 @@
           class="textarea-class"
           placeholder="Leave a comment..."
           rows="5"
+          cols="1000"
           v-model="newComment"
         ></textarea>
-        <input type="submit" value="Submit" />
+        <input type="submit" class="form-submit-button" value="Submit" />
       </form>
     </div>
   </div>
@@ -115,8 +116,35 @@ h1 {
 
 .textarea-class {
   border-radius: 15px;
+  outline: none;
   width: 100%;
+  height: 150px;
   padding: 10px;
+  resize: none;
   margin: 0 30px;
+}
+
+.form-submit-button {
+  width: 150px;
+  height: 40px;
+
+  background: #f8bace;
+  color: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px #eee;
+  text-shadow: none;
+  margin: 0 auto;
+  text-align: center;
+  outline: none;
+}
+
+.form-submit-button:hover {
+  background: #f8d4e0;
+  color: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px #eee;
+  text-shadow: none;
 }
 </style>
