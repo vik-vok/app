@@ -78,7 +78,8 @@ export default {
       var url = "https://vikvok-anldg2io3q-ew.a.run.app/recordedvoices";
 
       var fd = new FormData();
-      fd.append("audio_data", this.data);
+      var filename = this.voice.id + "--" + Date().toISOString();
+      fd.append("audio_data", this.data, filename);
       axios.post(url, fd, {
         headers: {
           "Content-Type": "multipart/form-data",
