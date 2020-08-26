@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="wrapper">
+    <div class="wrapper-main">
       <VoicePlayer v-if="voice" class="player" :voice="voice" />
       <VoiceComments
         :voiceComments="voiceComments"
@@ -65,8 +65,8 @@ export default {
 </script>
 
 <style scoped>
-.wrapper {
+.wrapper-main {
   margin: 100px auto;
-  width: 85%;
+  width: 95%;
 }
 </style>
