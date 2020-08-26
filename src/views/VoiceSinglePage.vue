@@ -46,6 +46,6 @@ export default {
 <style scoped>
 .wrapper {
   margin: 100px auto;
-  width: 80%;
+  width: 85%;
 }
 </style>

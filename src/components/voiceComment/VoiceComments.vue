@@ -1,23 +1,15 @@
 <template>
   <div class="comments-wrapper">
-    <h1>Comments</h1>
+    <h1>Recorded Voices</h1>
     <div class="scrolling-wrapper-flexbox">
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
-      <VoiceMiniPlayer />
+      <VoiceMiniPlayer
+        :key="recordedVoice.id"
+        v-for="recordedVoice in this.recordedVoices"
+        :voice="recordedVoice"
+      />
     </div>
+    <hr />
+    <h1>Comments</h1>
     <div v-bind:key="comment.id" v-for="comment in this.voiceComments">
       <Comment class="single-comment" :comment="comment" />
     </div>
@@ -43,17 +35,21 @@ export default {
 
 <style scoped>
 .comments-wrapper {
-  background-color: #eee6e6;
+  background-color: #feecf2;
   border-radius: 30px;
 }
 
 .single-comment {
   margin: 2% 10%;
 }
-
+h1 {
+  padding: 50px 0;
+}
 /* Side Scroll */
 .scrolling-wrapper-flexbox {
+  margin: 0 25px 0 25px;
   display: flex;
+  padding: 0 0 20px 0;
   flex-wrap: nowrap;
   overflow-x: auto;
 }
