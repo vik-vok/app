@@ -2,12 +2,14 @@
   <div>
     <div class="wrapper">
       <VoicePlayer v-if="voice" class="player" :voice="voice" />
+      <VoiceComments :voiceComments="voiceComments" />
     </div>
   </div>
 </template>
 
 <script>
 import VoicePlayer from "@/components/voice/VoicePlayer.vue";
+import VoiceComments from "@/components/voiceComment/VoiceComments";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -18,15 +20,17 @@ export default {
   },
   created() {
     this.fetchOneVoice(this.id);
+    this.fetchVoiceComments(this.id);
   },
   methods: {
-    ...mapActions(["fetchOneVoice"]),
+    ...mapActions(["fetchOneVoice", "fetchVoiceComments"]),
   },
   computed: {
-    ...mapGetters(["voice"]),
+    ...mapGetters(["voice", "voiceComments"]),
   },
   components: {
     VoicePlayer,
+    VoiceComments,
   },
 };
 </script>
