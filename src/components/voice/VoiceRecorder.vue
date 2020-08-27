@@ -20,7 +20,7 @@
           />
         </div>
 
-        <div v-if="recordedVoice">
+        <div v-if="recordedVoice" class="recorded-voice">
           <audio :src="recordedVoice.src" controls />
         </div>
         <div>
@@ -96,8 +96,13 @@ export default {
 }
 .custom-button-recorder {
   margin: 10px;
-  background-color: #f8d5d7;
+  background-color: #f8bace;
+  color: white;
   border-radius: 15px;
+}
+
+.custom-button-recorder:hover {
+  background-color: #f8d5d7;
 }
 
 .trigger-modal-button {
@@ -121,5 +126,17 @@ export default {
 
 .modal-open footer {
   display: none;
+}
+
+.vue-audio-recorder {
+  background-color: #f8bace;
+}
+
+.vue-audio-recorder:hover {
+  background-color: #f8d5d7;
+}
+
+.recorded-voice {
+  margin: 40px 0 10px 0;
 }
 </style>

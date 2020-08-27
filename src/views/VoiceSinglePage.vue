@@ -67,6 +67,18 @@ export default {
 <style scoped>
 .wrapper-main {
   margin: 100px auto;
-  width: 95%;
+  width: 75%;
+}
+
+@media only screen and (max-width: 800px) {
+  .wrapper-main {
+    width: 95%;
+  }
+}
+</style>
+
+<style>
+.modal-header {
+  display: none;
 }
 </style>
