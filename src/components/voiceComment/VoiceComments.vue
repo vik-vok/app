@@ -14,7 +14,10 @@
       <Comment class="single-comment" :comment="comment" />
     </div>
     <div v-if="user && fetched" class="new-comment">
-      <div class="new-comment-f" v-bind:style="[backgroundAvatar]"></div>
+      <div
+        class="new-comment-f"
+        :style="{ backgroundImage: 'url(' + user.photoUrl + ')' }"
+      ></div>
       <form @submit="SubmitNewComment">
         <textarea
           class="textarea-class"
@@ -102,6 +105,7 @@ h1 {
   width: 125px;
   background-size: cover;
   background-position: center center;
+  background-image: url("https://hezway.ipower.com/poolsafeinc/wp-content/uploads/2017/06/profile.png");
 }
 
 .textarea-class {
