@@ -37,14 +37,13 @@ export default {
     addComment(s) {
       if (this.user) {
         var voiceID = this.id;
-        console.log(this.user);
         var userID = this.user.id;
         var data = {
           text: s,
           voiceID: voiceID,
           userID: userID,
         };
-        this.addVoiceComment(data);
+        this.addVoiceComment({ data: data, user: this.user });
       }
     },
   },

@@ -13,9 +13,14 @@ const actions = {
     commit("setVoiceComments", response.data);
   },
   async addVoiceComment({ commit }, data) {
-    console.log(data);
-    const response = await axios.post(api.path + "/comments", data);
-    commit("newVoiceComment", response.data);
+    const response = await axios.post(api.path + "/comments", data.data);
+    var newData = {
+      ...response.data,
+      user: {
+        ...data.user,
+      },
+    };
+    commit("newVoiceComment", newData);
   },
 };
 
