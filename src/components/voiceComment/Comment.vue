@@ -22,6 +22,22 @@
             {{ comment.text }}
           </p>
         </div>
+        <button class="btn"><i class="fa fa-trash"></i></button>
+
+        <button
+          class="open-modal trigger-modal-button"
+          v-b-modal="'modal-' + comment.ID"
+        ></button>
+        <b-modal
+          :id="'modal-' + comment.ID"
+          :hide-footer="true"
+          class="modal-class"
+          title="Record Voice"
+        >
+          <div class="modal-wrapper">
+            <h3 class="">{{ comment.ID }}</h3>
+          </div>
+        </b-modal>
       </div>
     </div>
     <hr class="comment-separator" />
