@@ -70,6 +70,7 @@ export default {
 
 .comment-separator {
   border: 0;
+  width: 95%;
   height: 1px;
   background: #333;
   background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
