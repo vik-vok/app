@@ -14,10 +14,7 @@
       <Comment class="single-comment" :comment="comment" />
     </div>
     <div v-if="user && fetched" class="new-comment">
-      <div
-        class="new-comment-f"
-        :style="{ backgroundImage: 'url(' + user.photoUrl + ')' }"
-      ></div>
+      <div class="new-comment-f"></div>
       <form @submit="SubmitNewComment">
         <textarea
           class="textarea-class"
