@@ -43,8 +43,8 @@ export default {
           button.classList.toggle("stop");
           button.classList.toggle("play");
 
-          this.curPlaying = null;
           this.curPlaying.audio.currentTime = 0;
+          this.curPlaying = null;
         };
       }
       button.classList.toggle("stop");

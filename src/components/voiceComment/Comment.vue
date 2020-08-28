@@ -22,21 +22,20 @@
             {{ comment.text }}
           </p>
         </div>
-        <button class="btn"><i class="fa fa-trash"></i></button>
 
         <button
-          class="open-modal trigger-modal-button"
+          class="btn open-modal trigger-modal-button"
           v-b-modal="'modal-' + comment.ID"
-        ></button>
+        >
+          <i class="fa fa-trash"></i>
+        </button>
         <b-modal
           :id="'modal-' + comment.ID"
           :hide-footer="true"
           class="modal-class"
           title="Record Voice"
         >
-          <div class="modal-wrapper">
-            <h3 class="">{{ comment.ID }}</h3>
-          </div>
+          <div class="modal-wrapper"></div>
         </b-modal>
       </div>
     </div>
@@ -54,6 +53,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 .wrapper {
   padding: 10px 30px;
   display: flex;
@@ -119,5 +119,19 @@ export default {
   .second {
     margin: 0 20px;
   }
+}
+/* Style buttons */
+.btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
 }
 </style>
