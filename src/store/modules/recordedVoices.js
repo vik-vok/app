@@ -12,11 +12,20 @@ const actions = {
     );
     commit("setRecordedVoices", response.data);
   },
+  async addRecordedVoice({ commit }, fd) {
+    const response = await axios.post(api.path + "/recordedvoices", fd);
+
+    commit;
+    response;
+    // ToDo: Auto Add
+  },
 };
 
 const mutations = {
   setRecordedVoices: (state, recordedVoices) =>
     (state.recordedVoices = recordedVoices),
+  appendRecordedVoices: (state, newVoices) =>
+    state.recordedVoices.push(newVoices),
 };
 
 const getters = {

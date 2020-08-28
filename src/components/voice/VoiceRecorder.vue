@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import axios from "axios";
 import { mapGetters } from "vuex";
+import store from "@/store";
 
 export default {
   name: "VoiceRecorder",
@@ -80,15 +80,14 @@ export default {
       this.recordedVoice = { src: window.URL.createObjectURL(data) };
     },
     submitData() {
-      var url = "https://vikvok-anldg2io3q-ew.a.run.app/recordedvoices";
-
       var fd = new FormData();
       var filename = this.voice.id + "--" + new Date().toISOString();
+
       fd.append("audio_data", this.data, filename);
       fd.append("parentId", this.voice.id);
       fd.append("userId", this.user.id);
 
-      axios.post(url, fd);
+      store.dispatch("addRecordedVoice", fd);
     },
   },
 };
