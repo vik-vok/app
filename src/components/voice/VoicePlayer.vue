@@ -9,7 +9,7 @@
       </div>
       <div class="second-inner audio-container">
         <audio controls>
-          <source :src="voice.path" type="audio/ogg" />
+          <source :src="voice.path" />
         </audio>
         <VoiceRecorder :voice="voice" class="second-inner-voice" />
       </div>
