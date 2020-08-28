@@ -153,7 +153,7 @@ h1 {
   }
 
   .single-comment {
-    margin: 1% 0% 1% 2%;
+    margin: 1% 2% 1% 2%;
   }
 
   .new-comment-f {
