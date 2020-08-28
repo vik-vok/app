@@ -1,8 +1,15 @@
 <template>
   <div>
     <div class="card">
-      <div class="card-avatar" v-bind:style="[backgroundAvatar]"></div>
-      <h5 class="user-name">{{ voice.name }}</h5>
+      <div
+        class="card-avatar"
+        :style="[
+          voice.user && voice.user.photoUrl
+            ? { backgroundImage: 'url(' + voice.user.photoUrl + ')' }
+            : {},
+        ]"
+      ></div>
+      <h5 class="user-name">{{ voice.user.username }}</h5>
       <div class="button-wrapper">
         <button class="play-button play" @click="play($event, voice)"></button>
       </div>
@@ -21,21 +28,14 @@ export default {
       curPlaying: null,
     };
   },
-  computed: {
-    backgroundAvatar: () => ({
-      "background-image":
-        "url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/00d109df-d44c-410d-a510-dfd9d5d61e6c/dao4ad5-fe9ba709-4916-4372-97fa-9e680414693a.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMDBkMTA5ZGYtZDQ0Yy00MTBkLWE1MTAtZGZkOWQ1ZDYxZTZjXC9kYW80YWQ1LWZlOWJhNzA5LTQ5MTYtNDM3Mi05N2ZhLTllNjgwNDE0NjkzYS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.EHNWzLINMtZtLj8iiUGGD8C0G_2ufiZPzD88QTOX7bA)",
-    }),
-  },
   methods: {
     play: function (e, voice) {
       const button = e.target;
-
       if (this.curPlaying && this.curPlaying.audio) {
         this.curPlaying.audio.pause();
         this.curPlaying = null;
       } else {
-        var audio = new Audio(voice.path);
+        var audio = new Audio(voice.voiceUrl);
         this.curPlaying = { audio, voice };
 
         this.curPlaying.audio.play();
@@ -75,6 +75,7 @@ export default {
   background-size: cover;
   background-position: center center;
   margin: 0 auto;
+  background-image: url("https://hezway.ipower.com/poolsafeinc/wp-content/uploads/2017/06/profile.png");
 }
 
 .user-name {

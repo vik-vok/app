@@ -48,6 +48,8 @@
 
 <script>
 import axios from "axios";
+import { mapGetters } from "vuex";
+
 export default {
   name: "VoiceRecorder",
   props: {
@@ -62,6 +64,9 @@ export default {
       recordedVoice: null,
       data: null,
     };
+  },
+  computed: {
+    ...mapGetters({ user: "user", fetched: "fetched" }),
   },
   methods: {
     removeRecord() {
@@ -80,11 +85,10 @@ export default {
       var fd = new FormData();
       var filename = this.voice.id + "--" + new Date().toISOString();
       fd.append("audio_data", this.data, filename);
-      axios.post(url, fd, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      fd.append("parentId", this.voice.id);
+      fd.append("userId", this.user.id);
+
+      axios.post(url, fd);
     },
   },
 };

@@ -25,7 +25,7 @@ export default {
   created() {
     this.fetchOneVoice(this.id);
     this.fetchVoiceComments(this.id);
-    this.fetchRecordedVoices();
+    this.fetchRecordedVoices(this.id);
   },
   methods: {
     ...mapActions([
