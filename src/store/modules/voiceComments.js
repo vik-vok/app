@@ -22,6 +22,14 @@ const actions = {
     };
     commit("newVoiceComment", newData);
   },
+  deleteVoiceComment({ commit }, id) {
+    console.log("delete");
+    console.log(id);
+    // const response =  axios.delete(api.path + "/comments", id);
+    // console.log(response)
+
+    commit;
+  },
 };
 
 const mutations = {

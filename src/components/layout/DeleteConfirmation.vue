@@ -30,7 +30,13 @@
             >
               Cancel
             </button>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              @click="$emit('delete')"
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>

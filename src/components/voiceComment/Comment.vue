@@ -29,7 +29,10 @@
         >
           <i class="fa fa-trash"></i>
         </button>
-        <DeleteConfirmation :id="comment.ID" />
+        <DeleteConfirmation
+          :id="comment.ID"
+          v-on:delete="$emit('delete-comment')"
+        />
       </div>
     </div>
     <hr class="comment-separator" />

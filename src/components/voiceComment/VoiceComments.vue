@@ -10,8 +10,12 @@
     </div>
     <hr />
     <h1>Comments</h1>
-    <div v-bind:key="comment.id" v-for="comment in this.voiceComments">
-      <Comment class="single-comment" :comment="comment" />
+    <div v-bind:key="comment.ID" v-for="comment in this.voiceComments">
+      <Comment
+        class="single-comment"
+        :comment="comment"
+        v-on:delete-comment="$emit('delete-comment', comment.ID)"
+      />
     </div>
     <div v-if="user && fetched" class="new-comment">
       <div class="new-comment-f"></div>
