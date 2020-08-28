@@ -9,6 +9,20 @@
             : {},
         ]"
       ></div>
+      <div v-if="user && fetched && user.id == voice.user.id">
+        <!-- <div> -->
+        <button
+          class="btn open-modal trigger-modal-button"
+          v-b-modal="'modal-' + voice.id"
+        >
+          <i class="fa fa-trash"></i>
+        </button>
+        <DeleteConfirmation
+          :id="voice.id"
+          toDelete="recorded voice"
+          v-on:delete="$emit('delete-voice')"
+        />
+      </div>
       <h5 class="user-name">{{ voice.user.username }}</h5>
       <div class="button-wrapper">
         <button class="play-button play" @click="play($event, voice)"></button>
@@ -18,6 +32,9 @@
 </template>
 
 <script>
+import DeleteConfirmation from "@/components/layout/DeleteConfirmation";
+import { mapGetters } from "vuex";
+
 export default {
   name: "VoiceMiniPlayer",
   props: {
@@ -50,6 +67,12 @@ export default {
       button.classList.toggle("stop");
       button.classList.toggle("play");
     },
+  },
+  components: {
+    DeleteConfirmation,
+  },
+  computed: {
+    ...mapGetters({ user: "user", fetched: "fetched" }),
   },
 };
 </script>
@@ -121,5 +144,18 @@ export default {
   .card {
     margin: 0 20px;
   }
+}
+
+/* Style buttons */
+.btn {
+  background-color: #f15e5e; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #af4444;
 }
 </style>

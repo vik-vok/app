@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import DeleteConfirmation from "../layout/DeleteConfirmation";
+import DeleteConfirmation from "@/components/layout/DeleteConfirmation";
 import { mapGetters } from "vuex";
 
 export default {
@@ -126,7 +126,7 @@ export default {
 }
 /* Style buttons */
 .btn {
-  background-color: DodgerBlue; /* Blue background */
+  background-color: #f15e5e; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
   padding: 12px 16px; /* Some padding */
@@ -135,6 +135,6 @@ export default {
 }
 /* Darker background on mouse-over */
 .btn:hover {
-  background-color: RoyalBlue;
+  background-color: #af4444;
 }
 </style>

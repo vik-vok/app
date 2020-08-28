@@ -17,8 +17,8 @@
           </div>
           <div class="modal-body">
             <p>
-              Do you really want to delete these comment? This process cannot be
-              undone
+              Do you really want to delete this {{ this.toDelete }}? This
+              process cannot be undone
             </p>
           </div>
           <div class="modal-footer justify-content-center">
@@ -49,6 +49,10 @@ export default {
   name: "DeleteConfirmation",
   props: {
     id: Number,
+    toDelete: {
+      type: String,
+      default: "comment",
+    },
   },
 };
 </script>
