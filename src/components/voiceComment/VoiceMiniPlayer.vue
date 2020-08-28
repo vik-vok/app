@@ -81,7 +81,6 @@ export default {
 .disabled {
   display: none !important;
 }
-
 .card {
   flex: 0 0 auto;
   margin: 0 40px;
@@ -90,7 +89,6 @@ export default {
   height: 280px;
   border-radius: 30px;
 }
-
 .card-avatar {
   border-radius: 50%;
   height: 115px;
@@ -100,11 +98,9 @@ export default {
   margin: 0 auto;
   background-image: url("https://hezway.ipower.com/poolsafeinc/wp-content/uploads/2017/06/profile.png");
 }
-
 .user-name {
   margin: 30px 0;
 }
-
 .play-button {
   position: absolute;
   background: #f8bace;
@@ -122,14 +118,12 @@ export default {
   outline: none;
   margin: auto;
 }
-
 .play-button:hover {
   background: #f8d4e0;
 }
 .stop {
   background: grey;
 }
-
 .stop:hover {
   background: black;
 }
@@ -139,20 +133,21 @@ export default {
 .play::after {
   content: "Play";
 }
-
 @media only screen and (max-width: 800px) {
   .card {
     margin: 0 20px;
   }
 }
-
 /* Style buttons */
 .btn {
-  background-color: #f15e5e; /* Blue background */
+  background-color: salmon; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
   font-size: 16px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
+  position: absolute;
+  top: 10%;
+  right: 10%;
 }
 /* Darker background on mouse-over */
 .btn:hover {

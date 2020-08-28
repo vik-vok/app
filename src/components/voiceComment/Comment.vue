@@ -145,7 +145,7 @@ export default {
   position: relative;
 }
 .btn {
-  background-color: #f15e5e; /* Blue background */
+  background-color: salmon; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
   padding: 12px 16px; /* Some padding */
