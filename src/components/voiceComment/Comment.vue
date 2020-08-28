@@ -23,16 +23,18 @@
           </p>
         </div>
 
-        <button
-          class="btn open-modal trigger-modal-button"
-          v-b-modal="'modal-' + comment.ID"
-        >
-          <i class="fa fa-trash"></i>
-        </button>
-        <DeleteConfirmation
-          :id="comment.ID"
-          v-on:delete="$emit('delete-comment')"
-        />
+        <div v-if="user && fetched && user.id == comment.user.id">
+          <button
+            class="btn open-modal trigger-modal-button"
+            v-b-modal="'modal-' + comment.ID"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+          <DeleteConfirmation
+            :id="comment.ID"
+            v-on:delete="$emit('delete-comment')"
+          />
+        </div>
       </div>
     </div>
     <hr class="comment-separator" />
@@ -41,6 +43,8 @@
 
 <script>
 import DeleteConfirmation from "../layout/DeleteConfirmation";
+import { mapGetters } from "vuex";
+
 export default {
   name: "Comment",
   props: {
@@ -48,6 +52,9 @@ export default {
   },
   components: {
     DeleteConfirmation,
+  },
+  computed: {
+    ...mapGetters({ user: "user", fetched: "fetched" }),
   },
 };
 </script>

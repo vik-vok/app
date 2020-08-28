@@ -1,5 +1,6 @@
 import axios from "axios";
 import api from "./APIconfig";
+// import { filter } from "core-js/fn/array";
 
 const state = {
   voiceComments: [],
@@ -25,9 +26,11 @@ const actions = {
   deleteVoiceComment({ commit }, id) {
     console.log("delete");
     console.log(id);
-    // const response =  axios.delete(api.path + "/comments", id);
-    // console.log(response)
-
+    const response = axios
+      .delete(api.path + `/comments/${id}`)
+      .then(() => commit("removeCommentByID", id))
+      .catch((err) => console.log(err));
+    console.log(response);
     commit;
   },
 };
@@ -38,6 +41,11 @@ const mutations = {
   },
   newVoiceComment: (state, voiceComment) => {
     state.voiceComments.push(voiceComment);
+  },
+  removeCommentByID: (state, commentID) => {
+    state.voiceComments = state.voiceComments.filter(
+      (comment) => comment.ID != commentID
+    );
   },
 };
 
