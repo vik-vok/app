@@ -19,6 +19,12 @@ const actions = {
     response;
     // ToDo: Auto Add
   },
+  deleteRecordedVoice({ commit }, id) {
+    axios
+      .delete(api.path + `/recordedvoices/${id}`)
+      .then(() => commit("removeRecordedVoiceByID", id))
+      .catch((err) => console.log(err));
+  },
 };
 
 const mutations = {
@@ -26,6 +32,10 @@ const mutations = {
     (state.recordedVoices = recordedVoices),
   appendRecordedVoices: (state, newVoices) =>
     state.recordedVoices.push(newVoices),
+  removeRecordedVoiceByID: (state, recordedVoiceID) =>
+    (state.recordedVoices = state.recordedVoices.filter(
+      (voice) => voice.id != recordedVoiceID
+    )),
 };
 
 const getters = {

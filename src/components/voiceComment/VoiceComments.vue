@@ -6,6 +6,7 @@
         :key="recordedVoice.id"
         v-for="recordedVoice in this.recordedVoices"
         :voice="recordedVoice"
+        v-on:delete-voice="$emit('delete-recorded-voice', recordedVoice.id)"
       />
     </div>
     <hr />

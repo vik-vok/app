@@ -7,6 +7,7 @@
         :recordedVoices="recordedVoices"
         v-on:addComment="addComment"
         v-on:delete-comment="deleteComment"
+        v-on:delete-recorded-voice="deleteRecordedvoice"
       />
     </div>
   </div>
@@ -34,6 +35,7 @@ export default {
       "fetchVoiceComments",
       "fetchRecordedVoices",
       "addVoiceComment",
+      "deleteRecordedVoice",
       "deleteVoiceComment",
     ]),
     addComment(s) {
@@ -50,6 +52,9 @@ export default {
     },
     deleteComment(id) {
       this.deleteVoiceComment(id);
+    },
+    deleteRecordedvoice(id) {
+      this.deleteRecordedVoice(id);
     },
   },
   computed: {
