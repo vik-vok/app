@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>List of All Voices</h1>
-    <Voices class="left" />
+    <Voices class="voices-page-wrapped" />
   </div>
 </template>
 
@@ -16,7 +16,15 @@ export default {
 </script>
 
 <style scoped>
-.left {
-  left: 0px;
+.voices-page-wrapped {
+  /* margin: 10px; */
+  padding: 5%;
+}
+
+@media only screen and (max-width: 800px) {
+  .voices-page-wrapped {
+    /* margin: 10px; */
+    padding: 2%;
+  }
 }
 </style>
