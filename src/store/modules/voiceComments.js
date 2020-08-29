@@ -7,9 +7,9 @@ const state = {
 };
 
 const actions = {
-  async fetchVoiceComments({ commit }, voiceID) {
+  async fetchVoiceComments({ commit }, voiceId) {
     const response = await axios.get(
-      api.path + `/originalvoices/${voiceID}/comments`
+      api.path + `/originalvoices/${voiceId}/comments`
     );
     commit("setVoiceComments", response.data);
   },
@@ -42,7 +42,7 @@ const mutations = {
   },
   removeCommentByID: (state, commentID) => {
     state.voiceComments = state.voiceComments.filter(
-      (comment) => comment.ID != commentID
+      (comment) => comment.commentId != commentID
     );
   },
 };

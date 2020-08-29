@@ -9,16 +9,16 @@
             : {},
         ]"
       ></div>
-      <div v-if="user && fetched && user.id == voice.user.id">
+      <div v-if="user && fetched && user.userId == voice.user.userId">
         <!-- <div> -->
         <button
           class="btn open-modal trigger-modal-button"
-          v-b-modal="'modal-' + voice.id"
+          v-b-modal="'modal-' + voice.recordedVoiceId"
         >
           <i class="fa fa-trash"></i>
         </button>
         <DeleteConfirmation
-          :id="voice.id"
+          :id="voice.recordedVoiceId"
           toDelete="recorded voice"
           v-on:delete="$emit('delete-voice')"
         />

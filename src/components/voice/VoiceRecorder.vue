@@ -2,10 +2,10 @@
   <div>
     <button
       class="open-modal trigger-modal-button"
-      v-b-modal="'modal-' + voice.id"
+      v-b-modal="'modal-' + voice.originalVoiceId"
     ></button>
     <b-modal
-      :id="'modal-' + voice.id"
+      :id="'modal-' + voice.originalVoiceId"
       :hide-footer="true"
       class="modal-class"
       title="Record Voice"
@@ -81,11 +81,12 @@ export default {
     },
     submitData() {
       var fd = new FormData();
-      var filename = this.voice.id + "--" + new Date().toISOString();
+      var filename =
+        this.voice.originalVoiceId + "--" + new Date().toISOString();
 
       fd.append("audio_data", this.data, filename);
-      fd.append("parentId", this.voice.id);
-      fd.append("userId", this.user.id);
+      fd.append("parentId", this.voice.originalVoiceId);
+      fd.append("userId", this.user.userId);
 
       store.dispatch("addRecordedVoice", { fd: fd, user: this.user });
     },

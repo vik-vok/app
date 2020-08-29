@@ -3,7 +3,7 @@
     <div class="first" v-bind:style="[backgroundAvatar]"></div>
     <div class="second">
       <div class="second-inner second-header">
-        <router-link v-bind:to="'/voices/' + voice.id">
+        <router-link v-bind:to="'/voices/' + voice.originalVoiceId">
           <span>{{ voice.name }}</span>
         </router-link>
       </div>

@@ -3,19 +3,21 @@
     <h1>Recorded Voices</h1>
     <div class="scrolling-wrapper-flexbox">
       <VoiceMiniPlayer
-        :key="recordedVoice.id"
+        :key="recordedVoice.recordedVoiceId"
         v-for="recordedVoice in this.recordedVoices"
         :voice="recordedVoice"
-        v-on:delete-voice="$emit('delete-recorded-voice', recordedVoice.id)"
+        v-on:delete-voice="
+          $emit('delete-recorded-voice', recordedVoice.recordedVoiceId)
+        "
       />
     </div>
     <hr />
     <h1>Comments</h1>
-    <div v-bind:key="comment.ID" v-for="comment in this.voiceComments">
+    <div v-bind:key="comment.commentId" v-for="comment in this.voiceComments">
       <Comment
         class="single-comment"
         :comment="comment"
-        v-on:delete-comment="$emit('delete-comment', comment.ID)"
+        v-on:delete-comment="$emit('delete-comment', comment.commentId)"
       />
     </div>
     <div v-if="user && fetched" class="new-comment">

@@ -26,16 +26,16 @@
 
       <div
         class="delete-wrapper"
-        v-if="user && fetched && user.id == comment.user.id"
+        v-if="user && fetched && user.userId == comment.user.userId"
       >
         <button
           class="btn open-modal trigger-modal-button"
-          v-b-modal="'modal-' + comment.ID"
+          v-b-modal="'modal-' + comment.commentId"
         >
           <i class="fa fa-trash"></i>
         </button>
         <DeleteConfirmation
-          :id="comment.ID"
+          :id="comment.commentId"
           v-on:delete="$emit('delete-comment')"
         />
       </div>

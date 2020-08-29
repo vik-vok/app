@@ -11,6 +11,7 @@ const actions = {
       api.path + `/originalvoices/${parentId}/voices`
     );
     commit("setRecordedVoices", response.data);
+    console.log(response.data);
   },
   async addRecordedVoice({ commit }, { fd, user }) {
     await axios
@@ -38,7 +39,7 @@ const mutations = {
     state.recordedVoices.push(newVoices),
   removeRecordedVoiceByID: (state, recordedVoiceID) =>
     (state.recordedVoices = state.recordedVoices.filter(
-      (voice) => voice.id != recordedVoiceID
+      (voice) => voice.recordedVoiceId != recordedVoiceID
     )),
 };
 

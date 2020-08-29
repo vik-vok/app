@@ -40,12 +40,12 @@ export default {
     ]),
     addComment(s) {
       if (this.user) {
-        var voiceID = this.id;
-        var userID = this.user.id;
+        var voiceId = this.id;
+        var userId = this.user.userId;
         var data = {
           text: s,
-          voiceID: voiceID,
-          userID: userID,
+          voiceId: voiceId,
+          userId: userId,
         };
         this.addVoiceComment({ data: data, user: this.user });
       }
