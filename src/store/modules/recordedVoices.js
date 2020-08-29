@@ -12,12 +12,16 @@ const actions = {
     );
     commit("setRecordedVoices", response.data);
   },
-  async addRecordedVoice({ commit }, fd) {
-    const response = await axios.post(api.path + "/recordedvoices", fd);
-
-    commit;
-    response;
-    // ToDo: Auto Add
+  async addRecordedVoice({ commit }, { fd, user }) {
+    await axios
+      .post(api.path + "/recordedvoices", fd)
+      .then(function (response) {
+        commit("appendRecordedVoices", { ...response.data, user });
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   },
   deleteRecordedVoice({ commit }, id) {
     axios

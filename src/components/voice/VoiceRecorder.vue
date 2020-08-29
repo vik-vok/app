@@ -87,7 +87,7 @@ export default {
       fd.append("parentId", this.voice.id);
       fd.append("userId", this.user.id);
 
-      store.dispatch("addRecordedVoice", fd);
+      store.dispatch("addRecordedVoice", { fd: fd, user: this.user });
     },
   },
 };
