@@ -85,7 +85,7 @@ export default {
         this.voice.originalVoiceId + "--" + new Date().toISOString();
 
       fd.append("audio_data", this.data, filename);
-      fd.append("parentId", this.voice.originalVoiceId);
+      fd.append("originalVoiceId", this.voice.originalVoiceId);
       fd.append("userId", this.user.userId);
 
       store.dispatch("addRecordedVoice", { fd: fd, user: this.user });

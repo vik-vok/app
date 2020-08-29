@@ -6,9 +6,9 @@ const state = {
 };
 
 const actions = {
-  async fetchRecordedVoices({ commit }, parentId) {
+  async fetchRecordedVoices({ commit }, originalVoiceId) {
     const response = await axios.get(
-      api.path + `/originalvoices/${parentId}/voices`
+      api.path + `/originalvoices/${originalVoiceId}/voices`
     );
     commit("setRecordedVoices", response.data);
     console.log(response.data);
