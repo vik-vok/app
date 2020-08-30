@@ -16,6 +16,12 @@ const actions = {
     const response = await axios.get(api.path + "/originalvoices/" + id);
     commit("setOneVoice", response.data);
   },
+
+  async addVoice({ commit }, data) {
+    console.log(data);
+    // await axios.post(api.path + "/originalVoices", data)
+    commit;
+  },
 };
 
 const mutations = {

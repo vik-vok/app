@@ -17,13 +17,11 @@ export default {
 
 <style scoped>
 .voices-page-wrapped {
-  /* margin: 10px; */
   padding: 5%;
 }
 
 @media only screen and (max-width: 800px) {
   .voices-page-wrapped {
-    /* margin: 10px; */
     padding: 2%;
   }
 }

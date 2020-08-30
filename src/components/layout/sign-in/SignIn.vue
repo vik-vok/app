@@ -7,6 +7,15 @@
       </button>
     </nav>
     <div v-if="fetched && user != null">
+      <button v-b-modal="'modal-upload-original-voice'"></button>
+      <b-modal
+        :id="'modal-upload-original-voice'"
+        :hide-footer="true"
+        class="modal-class"
+        title="Upload New Voice"
+      >
+        <VoiceOriginalRecorder />
+      </b-modal>
       {{ user.username }}
       <button v-on:click="signOut" type="button" class="btn btn-dark">
         Sign Out
@@ -197,6 +206,7 @@
 
 <script>
 import "@/components/layout/sign-in/sign-in-front.js";
+import VoiceOriginalRecorder from "@/components/voice/VoiceOriginalRecorder";
 import Loader from "@/components/Loader";
 import handlers from "./sign-in";
 import SocialSignIns from "./SocialSignIns";
@@ -204,7 +214,7 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "SignIn",
-  components: { SocialSignIns, Loader },
+  components: { SocialSignIns, Loader, VoiceOriginalRecorder },
   data() {
     return {
       email: "",
