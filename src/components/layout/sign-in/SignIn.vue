@@ -7,7 +7,9 @@
       </button>
     </nav>
     <div v-if="fetched && user != null">
-      <button v-b-modal="'modal-upload-original-voice'"></button>
+      <button v-b-modal="'modal-upload-original-voice'">
+        Upload New Voice
+      </button>
       <b-modal
         :id="'modal-upload-original-voice'"
         :hide-footer="true"

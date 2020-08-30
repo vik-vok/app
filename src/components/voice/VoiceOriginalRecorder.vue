@@ -7,7 +7,10 @@
             >File
             <input type="file" id="file" ref="file" />
           </label>
-          <input type="text" />
+          <input type="text" placeholder="name" v-model="name" />
+          <br />
+          <input type="text" placeholder="avatar" v-model="avatar" />
+          <br />
           <button v-on:click="submitFile()">Submit</button>
         </div>
       </div>
@@ -24,7 +27,6 @@ export default {
     return {
       name: "",
       file: "",
-      data: "",
       avatar: "",
     };
   },

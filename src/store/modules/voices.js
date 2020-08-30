@@ -19,7 +19,7 @@ const actions = {
 
   async addVoice({ commit }, data) {
     console.log(data);
-    // await axios.post(api.path + "/originalVoices", data)
+    await axios.post(api.path + "/originalVoices", data);
     commit;
   },
 };
