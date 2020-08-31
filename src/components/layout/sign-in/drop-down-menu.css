@@ -48,8 +48,7 @@
   transform: scale(1);
 }
 .menu-item {
-  width: 200px;
-
+  width: auto;
   position: relative;
   line-height: 2.5rem;
   text-align: center;
@@ -61,6 +60,7 @@
   display: block;
   color: #fff;
 }
+
 .sub-menu .menu-item {
   padding: 0.75rem 0;
   background: #f67280;
@@ -154,7 +154,7 @@
 
 .sub-menu {
   position: absolute;
-  width: 100%;
+  width: 300px;
   top: 100%;
   left: 0;
   display: none;

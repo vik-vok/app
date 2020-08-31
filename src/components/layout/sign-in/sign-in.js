@@ -5,6 +5,11 @@ import store from "@/store";
  * Handles the sign up button press.
  */
 function SignUp(e) {
+  if (this.username == null || this.username == "") {
+    this.err_msg_signup = `Username can not be left blank. Please enter username.`;
+    e.preventDefault();
+    return;
+  }
   firebase
     .auth()
     .createUserWithEmailAndPassword(this.email, this.password)

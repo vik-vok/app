@@ -10,7 +10,6 @@
       <ol>
         <li class="menu-item">
           <a class="header-name">
-            <!-- <div class="header-img"></div> -->
             <div>{{ user.username ? user.username : user.email }}</div>
           </a>
           <ol class="sub-menu">
@@ -144,12 +143,6 @@
               />
               <a href="#" class="hide-password">Show</a>
               <span class="cd-error-message">Error message here!</span>
-            </p>
-            <p class="fieldset">
-              <input type="checkbox" id="accept-terms" />
-              <label for="accept-terms"
-                >I agree to the <a href="#0">Terms</a></label
-              >
             </p>
             <p class="fieldset">
               <input
