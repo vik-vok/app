@@ -1,8 +1,10 @@
 <template>
   <div>
     <div class="wrapper-main">
-      <VoicePlayer v-if="voice" class="player" :voice="voice" />
+      <VoicePlayer v-if="voice" class="elem" :voice="voice" />
+      <VoiceStatistics class="elem" :stats="singleStats" />
       <VoiceComments
+        class="elem"
         :voiceComments="voiceComments"
         :recordedVoices="recordedVoices"
         v-on:addComment="addComment"
@@ -14,7 +16,8 @@
 </template>
 
 <script>
-import VoicePlayer from "@/components/voice/VoicePlayer.vue";
+import VoicePlayer from "@/components/voice/VoicePlayer";
+import VoiceStatistics from "@/components/voice/VoiceStatistics";
 import VoiceComments from "@/components/voiceComment/VoiceComments";
 import { mapGetters, mapActions } from "vuex";
 
@@ -28,6 +31,7 @@ export default {
     this.fetchOneVoice(this.id);
     this.fetchVoiceComments(this.id);
     this.fetchRecordedVoices(this.id);
+    this.fetchStatsById(this.id);
   },
   methods: {
     ...mapActions([
@@ -37,6 +41,7 @@ export default {
       "addVoiceComment",
       "deleteRecordedVoice",
       "deleteVoiceComment",
+      "fetchStatsById",
     ]),
     addComment(s) {
       if (this.user) {
@@ -64,11 +69,13 @@ export default {
       "voice",
       "voiceComments",
       "recordedVoices",
+      "singleStats",
     ]),
   },
   components: {
     VoicePlayer,
     VoiceComments,
+    VoiceStatistics,
   },
 };
 </script>
@@ -77,6 +84,10 @@ export default {
 .wrapper-main {
   margin: 100px auto;
   width: 75%;
+}
+
+.elem {
+  margin: 30px 0;
 }
 
 @media only screen and (max-width: 800px) {

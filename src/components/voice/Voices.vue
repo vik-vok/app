@@ -1,7 +1,7 @@
 <template>
   <div class="player">
     <div v-bind:key="voice.originalVoiceId" v-for="voice in this.voices">
-      <VoicePlayer :voice="voice" />
+      <VoicePlayer class="single-player" :voice="voice" />
     </div>
   </div>
 </template>
@@ -37,5 +37,9 @@ export default {
 .player {
   margin: auto;
   width: 100%;
+}
+
+.single-player {
+  margin: 20px 0;
 }
 </style>

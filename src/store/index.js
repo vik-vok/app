@@ -4,6 +4,7 @@ import voices from "./modules/voices";
 import voiceComments from "./modules/voiceComments";
 import users from "./modules/users";
 import recordedVoices from "./modules/recordedVoices";
+import statistics from "./modules/statistics";
 
 Vue.use(Vuex);
 
@@ -13,5 +14,6 @@ export default new Vuex.Store({
     users,
     voiceComments,
     recordedVoices,
+    statistics,
   },
 });

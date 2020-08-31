@@ -48,11 +48,11 @@ export default {
 <style scoped>
 .wrapper {
   padding: 10px 30px;
-  margin: 25px 0px;
   display: flex;
   height: 180px;
   align-items: center;
   background-color: #f8d4e0;
+
   border-radius: 30px;
 }
 
