@@ -81,9 +81,11 @@ export default {
   border-radius: 30px;
   padding-bottom: 10px;
 }
+
 .single-comment {
   margin: 2% 8%;
 }
+
 h1 {
   padding: 50px 0;
 }

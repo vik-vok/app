@@ -2,17 +2,13 @@
   <div id="nav">
     <nav class="navbar navbar-dark nav-custom">
       <div>
-        <router-link class="header-navigation-option" to="/">
-          Home
-        </router-link>
-        |
-        <router-link class="header-navigation-option" to="/about">
-          About
-        </router-link>
-        |
-        <router-link class="header-navigation-option" to="/voices">
-          Voices
-        </router-link>
+        <router-link class="header-navigation-option" to="/">Home</router-link>|
+        <router-link class="header-navigation-option" to="/about"
+          >About</router-link
+        >|
+        <router-link class="header-navigation-option" to="/voices"
+          >Voices</router-link
+        >
       </div>
       <SignIn />
     </nav>
@@ -38,6 +34,7 @@ export default {
 }
 
 .nav-custom {
+  margin: 0 100px;
   color: white;
 }
 
@@ -52,5 +49,11 @@ export default {
 
 #nav-in {
   display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav-custom {
+    margin: 0;
+  }
 }
 </style>

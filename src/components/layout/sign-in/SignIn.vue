@@ -7,21 +7,37 @@
       </button>
     </nav>
     <div v-if="fetched && user != null">
-      <button v-b-modal="'modal-upload-original-voice'">
-        Upload New Voice
-      </button>
-      <b-modal
-        :id="'modal-upload-original-voice'"
-        :hide-footer="true"
-        class="modal-class"
-        title="Upload New Voice"
-      >
-        <VoiceOriginalRecorder />
-      </b-modal>
-      {{ user.username }}
-      <button v-on:click="signOut" type="button" class="btn btn-dark">
-        Sign Out
-      </button>
+      <ol>
+        <li class="menu-item">
+          <a class="header-name">
+            <!-- <div class="header-img"></div> -->
+            <div>{{ user.username ? user.username : user.email }}</div>
+          </a>
+          <ol class="sub-menu">
+            <li class="menu-item">
+              <a class="cursor-href">Profile</a>
+            </li>
+            <li class="menu-item">
+              <a v-b-modal="'modal-upload-original-voice'" class="cursor-href"
+                >Upload New Voice</a
+              >
+              <b-modal
+                :id="'modal-upload-original-voice'"
+                :hide-footer="true"
+                class="modal-class"
+                title="Upload New Voice"
+              >
+                <VoiceOriginalRecorder />
+              </b-modal>
+            </li>
+            <li v-on:click="signOut" class="menu-item">
+              <a class="cursor-href">
+                Sign Out
+              </a>
+            </li>
+          </ol>
+        </li>
+      </ol>
     </div>
     <div class="cd-user-modal">
       <!-- this is the entire modal form, including the background -->
@@ -242,3 +258,4 @@ export default {
 </script>
 
 <style scoped src="./sign-in.css"></style>
+<style scoped src="./drop-down-menu.css"></style>
