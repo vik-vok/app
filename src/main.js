@@ -7,6 +7,7 @@ import "./components/firebaseinit.js";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import VueRecord from "@codekraft-studio/vue-record";
+
 Vue.use(VueRecord);
 
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
@@ -16,12 +17,18 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
 import { ModalPlugin } from "bootstrap-vue";
+
 Vue.use(ModalPlugin);
 
 Vue.config.productionTip = false;
 
 import JwPagination from "jw-vue-pagination";
+
 Vue.component("jw-pagination", JwPagination);
+
+import Trend from "vuetrend";
+
+Vue.use(Trend);
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) store.dispatch("fetchUser", user.uid);

@@ -23,7 +23,14 @@
           v-on:delete="$emit('delete-voice')"
         />
       </div>
-      <h5 class="user-name">{{ voice.user.username }}</h5>
+      <h5 class="user-name" v-if="voice.user.username">
+        {{ voice.user.username }}
+      </h5>
+      <h5 class="user-name" v-if="voice.user.createDate">
+        {{ voice.user.createDate }}
+      </h5>
+      <h5 class="user-name" v-if="voice.user.score">{{ voice.user.score }}</h5>
+      <!--<h5 class="user-name">{{ voice.user.username }}</h5>-->
       <div class="button-wrapper">
         <button class="play-button play" @click="play($event, voice)"></button>
       </div>

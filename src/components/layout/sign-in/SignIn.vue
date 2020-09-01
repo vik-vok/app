@@ -15,18 +15,20 @@
         >
           <b-dropdown-item></b-dropdown-item>
           <b-dropdown-item>
-            <div class="dropdown-profile-f">
-              <img
-                class="dropdown-profile-picture"
-                :src="
-                  user.photoUrl
-                    ? user.photoUrl
-                    : 'https://hezway.ipower.com/poolsafeinc/wp-content/uploads/2017/06/profile.png'
-                "
-                alt=""
-              />
-            </div>
-            Profile
+            <router-link v-bind:to="'/profile/' + user.userId">
+              <div class="dropdown-profile-f">
+                <img
+                  class="dropdown-profile-picture"
+                  :src="
+                    user.photoUrl
+                      ? user.photoUrl
+                      : 'https://hezway.ipower.com/poolsafeinc/wp-content/uploads/2017/06/profile.png'
+                  "
+                  alt=""
+                />
+              </div>
+              Profile
+            </router-link>
           </b-dropdown-item>
           <b-dropdown-item>
             <a v-b-modal="'modal-upload-original-voice'" class="cursor-href"

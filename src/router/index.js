@@ -24,6 +24,11 @@ const routes = [
     path: "/voices/:id",
     component: () => import("../views/VoiceSinglePage.vue"),
   },
+  {
+    path: "/profile/:id",
+    name: "Profile",
+    component: () => import("../views/Profile.vue"),
+  },
 ];
 
 const router = new VueRouter({
