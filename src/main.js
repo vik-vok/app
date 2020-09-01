@@ -20,6 +20,9 @@ Vue.use(ModalPlugin);
 
 Vue.config.productionTip = false;
 
+import JwPagination from "jw-vue-pagination";
+Vue.component("jw-pagination", JwPagination);
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) store.dispatch("fetchUser", user.uid);
   else store.dispatch("fetchUser", null);

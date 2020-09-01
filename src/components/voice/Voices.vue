@@ -1,8 +1,13 @@
 <template>
   <div class="player">
-    <div v-bind:key="voice.originalVoiceId" v-for="voice in this.voices">
+    <div v-bind:key="voice.originalVoiceId" v-for="voice in pageOfItems">
       <VoicePlayer class="single-player" :voice="voice" />
     </div>
+    <jw-pagination
+      :items="this.voices"
+      @changePage="onChangePage"
+      :pageSize="3"
+    ></jw-pagination>
   </div>
 </template>
 
@@ -14,6 +19,15 @@ export default {
   name: "Voices",
   methods: {
     ...mapActions(["fetchVoices"]),
+    onChangePage(pageOfItems) {
+      // update page of items
+      this.pageOfItems = pageOfItems;
+    },
+  },
+  data() {
+    return {
+      pageOfItems: [],
+    };
   },
   computed: {
     ...mapGetters(["allVoices", "popularVoices"]),
