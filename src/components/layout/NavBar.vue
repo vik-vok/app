@@ -1,11 +1,11 @@
 <template>
   <div id="nav">
     <nav class="navbar navbar-dark nav-custom">
-      <div>
-        <router-link class="header-navigation-option" to="/">Home</router-link>|
+      <div class="navigation-wrapper">
+        <router-link class="header-navigation-option" to="/">Home</router-link>
         <router-link class="header-navigation-option" to="/about"
           >About</router-link
-        >|
+        >
         <router-link class="header-navigation-option" to="/voices"
           >Voices</router-link
         >
@@ -55,5 +55,14 @@ export default {
   .nav-custom {
     margin: 0;
   }
+
+  .navigation-wrapper {
+    direction: column;
+  }
+}
+
+.header-navigation-option {
+  margin: 0 10px;
+  font-size: 20px;
 }
 </style>

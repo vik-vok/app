@@ -5,9 +5,15 @@ import store from "./store";
 import firebase from "firebase";
 import "./components/firebaseinit.js";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-import VueRecord from "@codekraft-studio/vue-record";
 
+import VueRecord from "@codekraft-studio/vue-record";
 Vue.use(VueRecord);
+
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+// Install BootstrapVue
+Vue.use(BootstrapVue);
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin);
 
 import { ModalPlugin } from "bootstrap-vue";
 Vue.use(ModalPlugin);

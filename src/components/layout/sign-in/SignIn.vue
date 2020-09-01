@@ -7,36 +7,46 @@
       </button>
     </nav>
     <div v-if="fetched && user != null">
-      <ol>
-        <li class="menu-item">
-          <a class="header-name">
-            <div>{{ user.username ? user.username : user.email }}</div>
-          </a>
-          <ol class="sub-menu">
-            <li class="menu-item">
-              <a class="cursor-href">Profile</a>
-            </li>
-            <li class="menu-item">
-              <a v-b-modal="'modal-upload-original-voice'" class="cursor-href"
-                >Upload New Voice</a
-              >
-              <b-modal
-                :id="'modal-upload-original-voice'"
-                :hide-footer="true"
-                class="modal-class"
-                title="Upload New Voice"
-              >
-                <VoiceOriginalRecorder />
-              </b-modal>
-            </li>
-            <li v-on:click="signOut" class="menu-item">
-              <a class="cursor-href">
-                Sign Out
-              </a>
-            </li>
-          </ol>
-        </li>
-      </ol>
+      <div>
+        <b-dropdown
+          id="dropdown-right"
+          :text="user.username ? user.username : user.email"
+          class="m-2"
+        >
+          <b-dropdown-item></b-dropdown-item>
+          <b-dropdown-item>
+            <div class="dropdown-profile-f">
+              <img
+                class="dropdown-profile-picture"
+                :src="
+                  user.photoUrl
+                    ? user.photoUrl
+                    : 'https://hezway.ipower.com/poolsafeinc/wp-content/uploads/2017/06/profile.png'
+                "
+                alt=""
+              />
+            </div>
+            Profile
+          </b-dropdown-item>
+          <b-dropdown-item>
+            <a v-b-modal="'modal-upload-original-voice'" class="cursor-href"
+              >Upload New Voice</a
+            >
+            <b-modal
+              :id="'modal-upload-original-voice'"
+              :hide-footer="true"
+              class="modal-class"
+              title="Upload New Voice"
+            >
+              <VoiceOriginalRecorder />
+            </b-modal>
+          </b-dropdown-item>
+          <b-dropdown-divider></b-dropdown-divider>
+          <b-dropdown-item v-on:click="signOut">
+            Sign Out
+          </b-dropdown-item>
+        </b-dropdown>
+      </div>
     </div>
     <div class="cd-user-modal">
       <!-- this is the entire modal form, including the background -->
@@ -251,4 +261,13 @@ export default {
 </script>
 
 <style scoped src="./sign-in.css"></style>
-<style scoped src="./drop-down-menu.css"></style>
+
+<style>
+.dropdown-profile-picture {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  background-position: center center;
+}
+</style>
