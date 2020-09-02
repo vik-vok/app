@@ -5,6 +5,7 @@ const state = {
   user: null,
   fetched: false,
   userRecordedVoices: [],
+  userOriginalVoices: [],
 };
 
 const actions = {
@@ -39,6 +40,16 @@ const actions = {
         console.log(error);
       });
   },
+  async fetchUserOriginalVoices({ commit }, userId) {
+    await axios
+      .get(api.path + `/users/${userId}/originalvoices`)
+      .then(function (response) {
+        commit("setUserOriginalVoices", { ...response.data });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
 };
 
 const mutations = {
@@ -48,12 +59,15 @@ const mutations = {
   },
   setUserRecordedVoices: (state, userRecordedVoices) =>
     (state.userRecordedVoices = userRecordedVoices),
+  setUserOriginalVoices: (state, userOriginalVoices) =>
+    (state.userOriginalVoices = userOriginalVoices),
 };
 
 const getters = {
   user: (state) => state.user,
   fetched: (state) => state.fetched,
   userRecordedVoices: (state) => state.userRecordedVoices,
+  userOriginalVoices: (state) => state.userOriginalVoices,
 };
 
 export default {
