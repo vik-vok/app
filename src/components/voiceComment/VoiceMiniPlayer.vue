@@ -10,7 +10,10 @@
             : {},
         ]"
       ></div>
-      <div v-if="user && fetched && user.userId == voice.userId">
+      <div
+        class="close-container"
+        v-if="user && fetched && user.userId == voice.userId"
+      >
         <!-- <div> -->
         <button
           class="btn open-modal trigger-modal-button"
@@ -24,13 +27,13 @@
           v-on:delete="$emit('delete-voice')"
         />
       </div>
-      <h5 class="user-name" v-if="voice.username">
+      <p class="user-name" v-if="voice.username">
         {{ voice.username }}
-      </h5>
-      <h5 class="user-name" v-if="voice.created">
-        {{ voice.created }}
-      </h5>
-      <h5 class="user-name" v-if="voice.score">{{ voice.score }}</h5>
+      </p>
+      <p class="user-name" v-if="voice.created">
+        {{ date }}
+      </p>
+      <p class="user-name">{{ voice.score }} 98%</p>
       <!--<h5 class="user-name">{{ voice.user.username }}</h5>-->
       <div class="button-wrapper">
         <button class="play-button play" @click="play($event, voice)"></button>
@@ -53,16 +56,14 @@ export default {
     return {
       curPlaying: null,
       currentVoice: null,
+      date: null,
     };
   },
   created() {
     this.currentVoice = this.haveUser ? this.voice.user : this.voice;
-    console.log(
-      "voice mini player",
-      this.currentVoice,
-      this.haveUser,
-      this.voice
-    );
+    this.date = this.currentVoice.created
+      ? new Date(this.currentVoice.created).toLocaleString("en-GB")
+      : null;
   },
   methods: {
     play: function (e, voice) {
@@ -103,9 +104,9 @@ export default {
 .card {
   flex: 0 0 auto;
   margin: 0 40px;
-  padding: 15px 0;
+  padding: 30px 0;
   width: 315px;
-  height: 280px;
+  /*height: 280px;*/
   border-radius: 30px;
 }
 .card-avatar {
@@ -118,10 +119,10 @@ export default {
   background-image: url("https://hezway.ipower.com/poolsafeinc/wp-content/uploads/2017/06/profile.png");
 }
 .user-name {
-  margin: 30px 0;
+  margin: 15px 0;
 }
 .play-button {
-  position: absolute;
+  /*position: absolute;*/
   background: #f8bace;
   border-radius: 11px;
   width: 150px;
@@ -135,7 +136,8 @@ export default {
   left: 0;
   right: 0;
   outline: none;
-  margin: auto;
+  /*margin: auto;*/
+  margin: 15px 0;
 }
 .play-button:hover {
   background: #f8d4e0;
@@ -157,6 +159,11 @@ export default {
     margin: 0 20px;
   }
 }
+.close-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 /* Style buttons */
 .btn {
   background-color: salmon; /* Blue background */
@@ -164,9 +171,9 @@ export default {
   color: white; /* White text */
   font-size: 16px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
-  position: absolute;
-  top: 10%;
-  right: 10%;
+  /*position: absolute;*/
+  /*top: 10%;*/
+  /*right: 10%;*/
 }
 /* Darker background on mouse-over */
 .btn:hover {

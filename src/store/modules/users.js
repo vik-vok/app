@@ -33,7 +33,6 @@ const actions = {
     await axios
       .get(api.path + `/merger/user/${userId}/voices`)
       .then(function (response) {
-        console.log("shemodixar aqqq??", response);
         commit("setUserRecordedVoices", { ...response.data });
       })
       .catch(function (error) {

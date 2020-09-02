@@ -116,6 +116,8 @@ export default {
   created() {
     this.fetchUserRecordedVoices(this.userId).then(() => {});
     this.fetchUserOriginalVoices(this.userId);
+    // this.height = document.getElementsByClassName('recorded-voices-data').offsetHeight
+    // console.log("height", this.height)
   },
   computed: {
     ...mapGetters({
@@ -130,7 +132,7 @@ export default {
 <style scoped>
 .profile-page-container {
   margin: 0 100px;
-  padding: 3.5rem 1rem;
+  padding: 2.5rem 1rem 3.5;
 }
 
 .profile-container {
@@ -214,7 +216,7 @@ export default {
 
 .recorded-voice {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
   margin: 30px 0;
 }
