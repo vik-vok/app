@@ -34,21 +34,32 @@
         <p>{{ user.email }}</p>
       </div>
     </div>
-    <div class="recorded-voices-container">
-      <div class="recorded-voices-data">
-        <!-- {{userRecordedVoices}} -->
-        <VoicePlayer></VoicePlayer>
-        <recorded-voices :recordedVoices="recordedVoices"></recorded-voices>
-      </div>
 
-      <div class="recorded-voices-chart">
-        <trend
-          :data="[0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0]"
-          :gradient="['#6fa8dc', '#42b983', '#2c3e50']"
-          auto-draw
-          smooth
-        >
-        </trend>
+    <div class="recorded-voices-container">
+      <h1>My Voices</h1>
+
+      <div
+        class="recorded-voice"
+        :key="voice.originalVoiceId"
+        v-for="voice in userRecordedVoices"
+      >
+        <div class="recorded-voices-data">
+          <!-- {{userRecordedVoices}} -->
+          <VoicePlayer :voice="voice"></VoicePlayer>
+          <recorded-voices
+            :recordedVoices="voice.recordedVoices"
+          ></recorded-voices>
+        </div>
+
+        <div class="recorded-voices-chart">
+          <trend-chart
+            :datasets="data"
+            :grid="grid"
+            :labels="labels"
+            :height="height"
+          >
+          </trend-chart>
+        </div>
       </div>
     </div>
     <div class="author-original-voices-container">
@@ -78,19 +89,35 @@ export default {
       recordedVoices: [],
       authorOriginalVoices: [],
       FavouriteVoices: [],
+      labels: {
+        xLabels: ["03/13", "04/13", "05/13", "06/13", "07/13"],
+        yLabels: 10,
+      },
+      data: [
+        {
+          data: [10, 50, 20, 100, 40, 60, 80],
+          smooth: true,
+          showPoints: true,
+        },
+      ],
+      grid: {
+        verticalLines: true,
+        verticalLinesNumber: 1,
+        horizontalLines: true,
+        horizontalLinesNumber: 1,
+      },
+      height: 500,
     };
   },
   methods: {
     ...mapActions(["fetchUserRecordedVoices"]),
+    changeProfilePicture() {},
   },
   created() {
-    this.fetchUserRecordedVoices(this.userId);
+    this.fetchUserRecordedVoices(this.userId).then(() => {});
   },
   computed: {
     ...mapGetters({ user: "user", userRecordedVoices: "userRecordedVoices" }),
-  },
-  methods: {
-    changeProfilePicture() {},
   },
 };
 </script>
@@ -170,5 +197,29 @@ export default {
 
 .profile-picture-container:hover .profile-picture-hover {
   display: inline-block;
+}
+
+.recorded-voices-container {
+  padding: 5.5rem 1rem;
+}
+
+.recorded-voices-container h1 {
+  text-align: left;
+}
+
+.recorded-voice {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 30px 0;
+}
+
+.recorded-voices-data {
+  width: 60%;
+}
+
+.recorded-voices-chart {
+  width: 40%;
+  padding: 20px;
 }
 </style>

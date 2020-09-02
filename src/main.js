@@ -26,9 +26,13 @@ import JwPagination from "jw-vue-pagination";
 
 Vue.component("jw-pagination", JwPagination);
 
-import Trend from "vuetrend";
+// import Trend from "vuetrend";
+//
+// Vue.use(Trend);
 
-Vue.use(Trend);
+import TrendChart from "vue-trend-chart";
+
+Vue.use(TrendChart);
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) store.dispatch("fetchUser", user.uid);

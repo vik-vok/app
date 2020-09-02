@@ -2,6 +2,7 @@
   <div>
     <div class="card">
       <div
+        v-if="voice.photoUrl"
         class="card-avatar"
         :style="[
           voice.user && voice.user.photoUrl
@@ -9,7 +10,7 @@
             : {},
         ]"
       ></div>
-      <div v-if="user && fetched && user.userId == voice.user.userId">
+      <div v-if="user && fetched && user.userId == voice.userId">
         <!-- <div> -->
         <button
           class="btn open-modal trigger-modal-button"
@@ -23,13 +24,13 @@
           v-on:delete="$emit('delete-voice')"
         />
       </div>
-      <h5 class="user-name" v-if="voice.user.username">
-        {{ voice.user.username }}
+      <h5 class="user-name" v-if="voice.username">
+        {{ voice.username }}
       </h5>
-      <h5 class="user-name" v-if="voice.user.createDate">
-        {{ voice.user.createDate }}
+      <h5 class="user-name" v-if="voice.created">
+        {{ voice.created }}
       </h5>
-      <h5 class="user-name" v-if="voice.user.score">{{ voice.user.score }}</h5>
+      <h5 class="user-name" v-if="voice.score">{{ voice.score }}</h5>
       <!--<h5 class="user-name">{{ voice.user.username }}</h5>-->
       <div class="button-wrapper">
         <button class="play-button play" @click="play($event, voice)"></button>
@@ -51,6 +52,9 @@ export default {
     return {
       curPlaying: null,
     };
+  },
+  created() {
+    console.log("voice mini player", this.voice);
   },
   methods: {
     play: function (e, voice) {
