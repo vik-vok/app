@@ -110,14 +110,19 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["fetchUserRecordedVoices"]),
+    ...mapActions(["fetchUserRecordedVoices", "fetchUserOriginalVoices"]),
     changeProfilePicture() {},
   },
   created() {
     this.fetchUserRecordedVoices(this.userId).then(() => {});
+    this.fetchUserOriginalVoices(this.userId);
   },
   computed: {
-    ...mapGetters({ user: "user", userRecordedVoices: "userRecordedVoices" }),
+    ...mapGetters({
+      user: "user",
+      userRecordedVoices: "userRecordedVoices",
+      userOriginalVoices: "userOriginalVoices",
+    }),
   },
 };
 </script>
