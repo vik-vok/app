@@ -8,12 +8,12 @@ const state = {
 
 const actions = {
   async fetchVoices({ commit }) {
-    const response = await axios.get(api.path + "/originalvoices");
+    const response = await axios.get(api.path + "/merger/voice/original");
     commit("setVoices", response.data);
   },
 
   async fetchOneVoice({ commit }, id) {
-    const response = await axios.get(api.path + "/originalvoices/" + id);
+    const response = await axios.get(api.path + "/merger/voice/original/" + id);
     commit("setOneVoice", response.data);
   },
 
