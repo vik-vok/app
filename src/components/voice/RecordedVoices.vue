@@ -1,6 +1,8 @@
 <template>
-  <div v-for="voice in recordedVoices">
-    <voice-mini-player :key="voice.id" :voice="voice"></voice-mini-player>
+  <div class="recorded-voices-container">
+    <div :key="voice.id" v-for="voice in recordedVoices">
+      <voice-mini-player :voice="voice"></voice-mini-player>
+    </div>
   </div>
 </template>
 
