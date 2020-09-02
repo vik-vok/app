@@ -63,7 +63,10 @@
       </div>
     </div>
     <div class="author-original-voices-container">
-      <div v-bind:key="voice.id" v-for="voice in authorOriginalVoices">
+      <div
+        v-bind:key="voice.originalVoiceId"
+        v-for="voice in userOriginalVoices"
+      >
         <voice-player :voice="voice"></voice-player>
       </div>
     </div>
