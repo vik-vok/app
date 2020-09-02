@@ -63,7 +63,10 @@
       </div>
     </div>
     <div class="author-original-voices-container">
+      <h1>User Original Voices</h1>
+
       <div
+        class="user-original-voices"
         v-bind:key="voice.originalVoiceId"
         v-for="voice in userOriginalVoices"
       >
@@ -231,5 +234,13 @@ export default {
 .recorded-voices-chart {
   width: 40%;
   padding: 20px;
+}
+
+.user-original-voices {
+  margin: 20px 0;
+}
+
+.author-original-voices-container h1 {
+  text-align: left;
 }
 </style>
