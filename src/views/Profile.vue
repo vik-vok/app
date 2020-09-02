@@ -20,6 +20,7 @@
     </div>
     <div class="recorded-voices-container">
       <div class="recorded-voices-data">
+        <!-- {{userRecordedVoices}} -->
         <VoicePlayer></VoicePlayer>
         <RecordedVoices :recordedVoices="recordedVoices"></RecordedVoices>
       </div>
@@ -48,7 +49,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import VoicePlayer from "../components/voice/VoicePlayer";
 
 export default {
@@ -56,13 +57,20 @@ export default {
   components: { VoicePlayer },
   data() {
     return {
+      userId: this.$route.params.id,
       recordedVoices: [],
       authorOriginalVoices: [],
       FavouriteVoices: [],
     };
   },
+  methods: {
+    ...mapActions(["fetchUserRecordedVoices"]),
+  },
+  created() {
+    this.fetchUserRecordedVoices(this.userId);
+  },
   computed: {
-    ...mapGetters({ user: "user" }),
+    ...mapGetters({ user: "user", userRecordedVoices: "userRecordedVoices" }),
   },
 };
 </script>
