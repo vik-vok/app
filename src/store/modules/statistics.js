@@ -1,5 +1,5 @@
-// import axios from "axios";
-// import api from "./APIconfig";
+import axios from "axios";
+import api from "./APIconfig";
 
 const state = {
   allStats: [],
@@ -11,26 +11,12 @@ const actions = {
     var data = {};
     commit("setStats", data);
   },
-  async fetchStatsById({ commit }) {
-    var data = {
-      numberTried: 2,
-      avgScore: 0.7894396743735501,
-      users: [
-        {
-          UserId: "CV5cSwmz2JMBrbfPYH9hCPzQceE2",
-          Score: 0.9231822562357122,
-        },
-        {
-          UserId: "CV5cSwmz2JMBrbfPYH9hCPzQceE2",
-          Score: 0.8680831507303111,
-        },
-        {
-          UserId: "k70ambh1NLWa3uF3hGuBVeOf9zZ2",
-          Score: 0.5770536161546271,
-        },
-      ],
-    };
-    commit("setSingleStats", data);
+  async fetchStatsById({ commit }, originalVoiceId) {
+    await axios
+      .get(api.path + "/merger/statistics/voice/" + originalVoiceId)
+      .then(function (response) {
+        commit("setSingleStats", response.data);
+      });
   },
 };
 

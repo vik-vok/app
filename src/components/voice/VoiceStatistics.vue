@@ -8,7 +8,7 @@
           <p>Average Score: {{ (stats.avgScore * 100).toFixed(2) }}%</p>
         </div>
         <div class="s">
-          <div :key="user.id" v-for="user in stats.users">
+          <div :key="user.id" v-for="user in stats.maxScorers">
             {{ user }}
           </div>
         </div>
