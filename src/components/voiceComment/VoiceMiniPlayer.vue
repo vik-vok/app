@@ -33,7 +33,7 @@
       <p class="user-name" v-if="voice.created">
         {{ date }}
       </p>
-      <p class="user-name">{{ voice.score }} 98%</p>
+      <p class="user-name" v-if="voice.score">{{ voice.score }}</p>
       <!--<h5 class="user-name">{{ voice.user.username }}</h5>-->
       <div class="button-wrapper">
         <button class="play-button play" @click="play($event, voice)"></button>
