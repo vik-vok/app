@@ -5,8 +5,8 @@
         v-if="voice.photoUrl"
         class="card-avatar"
         :style="[
-          voice.user && voice.user.photoUrl
-            ? { backgroundImage: 'url(' + voice.user.photoUrl + ')' }
+          voice.user && voice.photoUrl
+            ? { backgroundImage: 'url(' + voice.photoUrl + ')' }
             : {},
         ]"
       ></div>
@@ -47,14 +47,22 @@ export default {
   name: "VoiceMiniPlayer",
   props: {
     voice: Object,
+    haveUser: Boolean,
   },
   data() {
     return {
       curPlaying: null,
+      currentVoice: null,
     };
   },
   created() {
-    console.log("voice mini player", this.voice);
+    this.currentVoice = this.haveUser ? this.voice.user : this.voice;
+    console.log(
+      "voice mini player",
+      this.currentVoice,
+      this.haveUser,
+      this.voice
+    );
   },
   methods: {
     play: function (e, voice) {

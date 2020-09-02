@@ -1,7 +1,7 @@
 <template>
-  <div class="recorded-voices-container">
+  <div class="recorded-voices-content">
     <div :key="voice.id" v-for="voice in recordedVoices">
-      <voice-mini-player :voice="voice"></voice-mini-player>
+      <voice-mini-player :have-user="false" :voice="voice"></voice-mini-player>
     </div>
   </div>
 </template>
@@ -16,4 +16,13 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+.recorded-voices-content {
+  display: flex;
+  overflow-x: scroll;
+  padding: 2.5rem 0;
+}
+.recorded-voices-content .card {
+  margin: 0 30px 0 0;
+}
+</style>

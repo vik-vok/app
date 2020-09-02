@@ -3,6 +3,7 @@
     <h1>Recorded Voices</h1>
     <div class="scrolling-wrapper-flexbox">
       <VoiceMiniPlayer
+        :have-user="true"
         :key="recordedVoice.recordedVoiceId"
         v-for="recordedVoice in this.recordedVoices"
         :voice="recordedVoice"
@@ -89,6 +90,7 @@ export default {
 h1 {
   padding: 50px 0;
 }
+
 /* Side Scroll */
 .scrolling-wrapper-flexbox {
   margin: 0 25px 0 25px;
@@ -173,6 +175,7 @@ h1 {
     margin: 1% 0% 1% 2%;
     padding: 0;
   }
+
   .textarea-class {
     border-radius: 15px;
     outline: none;
