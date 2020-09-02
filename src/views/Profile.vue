@@ -36,7 +36,10 @@
       </div>
     </div>
     <div class="author-original-voices-container">
-      <div v-bind:key="voice.id" v-for="voice in authorOriginalVoices">
+      <div
+        v-bind:key="voice.originalVoiceId"
+        v-for="voice in userOriginalVoices"
+      >
         <voice-player :voice="voice"></voice-player>
       </div>
     </div>
@@ -59,18 +62,22 @@ export default {
     return {
       userId: this.$route.params.id,
       recordedVoices: [],
-      authorOriginalVoices: [],
       FavouriteVoices: [],
     };
   },
   methods: {
-    ...mapActions(["fetchUserRecordedVoices"]),
+    ...mapActions(["fetchUserRecordedVoices", "fetchUserOriginalVoices"]),
   },
   created() {
     this.fetchUserRecordedVoices(this.userId);
+    this.fetchUserOriginalVoices(this.userId);
   },
   computed: {
-    ...mapGetters({ user: "user", userRecordedVoices: "userRecordedVoices" }),
+    ...mapGetters({
+      user: "user",
+      userRecordedVoices: "userRecordedVoices",
+      userOriginalVoices: "userOriginalVoices",
+    }),
   },
 };
 </script>
