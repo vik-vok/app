@@ -4,6 +4,7 @@ import api from "./APIconfig";
 const state = {
   user: null,
   fetched: false,
+  userRecordedVoices: [],
 };
 
 const actions = {
@@ -27,6 +28,16 @@ const actions = {
     await axios.post(api.path + "/users", data);
     commit;
   },
+  async fetchUserRecordedVoices({ commit }, userId) {
+    await axios
+      .get(api.path + `/merger/user/${userId}/voices`)
+      .then(function (response) {
+        commit("setUserRecordedVoices", { ...response.data });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
 };
 
 const mutations = {
@@ -34,11 +45,14 @@ const mutations = {
     state.user = user;
     state.fetched = true;
   },
+  setUserRecordedVoices: (state, userRecordedVoices) =>
+    (state.userRecordedVoices = userRecordedVoices),
 };
 
 const getters = {
   user: (state) => state.user,
   fetched: (state) => state.fetched,
+  userRecordedVoices: (state) => state.userRecordedVoices,
 };
 
 export default {

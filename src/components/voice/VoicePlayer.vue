@@ -15,7 +15,16 @@
       </div>
       <div class="second-inner">
         <div class="inner-left">
-          <span>Uploaded by Someone</span>
+          <span
+            >Uploaded by
+            {{
+              voice.user
+                ? voice.user.username
+                  ? voice.user.username
+                  : voice.user.email
+                : "Anonym"
+            }}</span
+          >
         </div>
         <div class="inner-right">
           <span>{{ voice.views }} views</span>
