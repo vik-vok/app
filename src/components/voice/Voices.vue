@@ -1,13 +1,20 @@
 <template>
   <div class="player">
-    <div v-bind:key="voice.originalVoiceId" v-for="voice in pageOfItems">
-      <VoicePlayer class="single-player" :voice="voice" />
+    <div v-if="isAll">
+      <div v-bind:key="voice.originalVoiceId" v-for="voice in pageOfItems">
+        <VoicePlayer class="single-player" :voice="voice" />
+      </div>
+      <jw-pagination
+        :items="this.voices"
+        @changePage="onChangePage"
+        :pageSize="3"
+      ></jw-pagination>
     </div>
-    <jw-pagination
-      :items="this.voices"
-      @changePage="onChangePage"
-      :pageSize="3"
-    ></jw-pagination>
+    <div v-else>
+      <div v-bind:key="voice.originalVoiceId" v-for="voice in popularVoices">
+        <VoicePlayer class="single-player" :voice="voice" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -55,5 +62,9 @@ export default {
 
 .single-player {
   margin: 20px 0;
+}
+
+.inactive {
+  display: none !important;
 }
 </style>
