@@ -4,7 +4,7 @@
     <footer class="mt-auto">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6">
+          <div v-if="false" class="col-lg-4 col-md-6">
             <h3>Site Map</h3>
             <ul class="list-unstyled three-column">
               <li>Home</li>
@@ -36,7 +36,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6">
+          <div v-if="false" class="col-lg-4 col-md-6">
             <h3>Maintainers</h3>
             <div class="media">
               <div class="image-cropper">
@@ -68,7 +68,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-12">
             <h3>Built By</h3>
             <img
               class="img-thumbnail"

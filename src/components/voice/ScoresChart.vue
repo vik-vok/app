@@ -12,7 +12,7 @@
       :grid="grid"
       :labels="{
         xLabels: ['Date', ...scores[voice.originalVoiceId]['dates']],
-        yLabels: 11,
+        yLabels: 5,
       }"
       :height="height"
       :min="0"
@@ -34,7 +34,7 @@ export default {
         horizontalLines: true,
         horizontalLinesNumber: 1,
       },
-      height: 400,
+      height: 200,
     };
   },
 

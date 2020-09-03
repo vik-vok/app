@@ -34,8 +34,15 @@ export default {
 }
 
 .nav-custom {
-  margin: 0 100px;
+  padding: 15px 100px;
   color: white;
+  margin-bottom: 50px;
+  position: sticky;
+  top: 0px;
+  /*background-color: #efa2b9;*/
+  /*background-color: #efa5bb;*/
+  background-image: linear-gradient(to bottom, #efa2b9, #efa5bb);
+  z-index: 100;
 }
 
 #nav a {

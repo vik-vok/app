@@ -272,4 +272,11 @@ export default {
   background-size: cover;
   background-position: center center;
 }
+
+.btn-secondary,
+.main-nav .btn-dark {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  outline: none;
+}
 </style>

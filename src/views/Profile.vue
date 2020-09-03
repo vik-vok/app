@@ -46,13 +46,13 @@
         <div class="recorded-voices-data">
           <!-- {{userRecordedVoices}} -->
           <VoicePlayer :voice="voice"></VoicePlayer>
+          <ScoresChart :voice="voice" :scores="scores"></ScoresChart>
+        </div>
+        <div class="recorded-voices">
           <recorded-voices
             :recordedVoices="voice.recordedVoices"
             v-on:delete-recorded-voice="deleteRecordedvoice"
           ></recorded-voices>
-        </div>
-        <div class="recorded-voices-chart">
-          <ScoresChart :voice="voice" :scores="scores"></ScoresChart>
         </div>
       </div>
     </div>
@@ -145,6 +145,15 @@ export default {
   height: 200px;
 }
 
+.recorded-voices {
+  width: 100%;
+}
+
+.recorded-voices-data .wrapper {
+  width: 68%;
+  margin-right: 30px;
+}
+
 .profile-picture-container img {
   width: 100%;
   height: auto;
@@ -210,11 +219,13 @@ export default {
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
+  flex-direction: column;
   margin: 30px 0;
 }
 
 .recorded-voices-data {
-  width: 60%;
+  display: flex;
+  width: 100%;
 }
 
 .recorded-voices-chart {
