@@ -40,7 +40,7 @@
         {{ (voice.score * 100).toString().slice(0, 5) }}%
       </p>
       <h5 class="user-name" v-if="haveUser">{{ voice.user.username }}</h5>
-      <div class="button-wrapper">
+      <div class="button-wrapper" v-if="voice.voiceUrl">
         <button class="play-button play" @click="play($event, voice)"></button>
       </div>
     </div>
@@ -121,8 +121,8 @@ export default {
 
 .card-avatar {
   border-radius: 50%;
-  height: 115px;
-  width: 115px;
+  height: 90px;
+  width: 90px;
   background-size: cover;
   background-position: center center;
   margin: 0 auto;

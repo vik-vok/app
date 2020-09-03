@@ -54,7 +54,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .player {
   margin: auto;
   width: 100%;
@@ -66,5 +66,10 @@ export default {
 
 .inactive {
   display: none !important;
+}
+
+.page-item.active .page-link {
+  background-color: salmon;
+  border-color: salmon;
 }
 </style>

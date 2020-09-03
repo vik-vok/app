@@ -9,7 +9,11 @@
         </div>
         <div class="s">
           <div :key="user.id" v-for="user in stats.maxScorers">
-            {{ user }}
+            <!--{{ user }}-->
+            <voice-mini-player
+              :voice="user"
+              :have-user="true"
+            ></voice-mini-player>
           </div>
         </div>
       </div>
@@ -18,30 +22,42 @@
 </template>
 
 <script>
+import VoiceMiniPlayer from "../voiceComment/VoiceMiniPlayer";
 export default {
   name: "VoiceStatistics",
+  components: { VoiceMiniPlayer },
   props: { stats: Object },
+  data() {
+    return {
+      maxScorers: null,
+    };
+  },
+  mounted() {
+    // this.maxScorers = this.stats.maxScorers.
+    // console.log("MAX SCORES", this.stats.maxScorers);
+  },
 };
 </script>
 
 <style scoped>
 .stats-wrapper {
   background-image: linear-gradient(to bottom, #feecf2, #feecf2);
-  padding: 10px 10px;
+  padding: 30px 10px;
   background-color: #f8d4e0;
   border-radius: 30px;
 }
 
 .info-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .f {
-  width: 50%;
+  /*width: 50%;*/
 }
 
 .s {
   flex: 1;
+  display: flex;
 }
 </style>
