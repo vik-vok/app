@@ -4,14 +4,14 @@
       :ref="voice.originalVoiceId"
       :datasets="[
         {
-          data: scores[voice.originalVoiceId]['scores'],
+          data: [0, ...scores[voice.originalVoiceId]['scores']],
           smooth: true,
           showPoints: true,
         },
       ]"
       :grid="grid"
       :labels="{
-        xLabels: scores[voice.originalVoiceId]['dates'],
+        xLabels: ['Date', ...scores[voice.originalVoiceId]['dates']],
         yLabels: 11,
       }"
       :height="height"
