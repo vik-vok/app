@@ -34,20 +34,26 @@ const actions = {
     await axios
       .get(api.path + `/merger/user/${userId}/voices`)
       .then(function (response) {
-        commit("setUserRecordedVoices", { ...response.data });
+        commit("setUserRecordedVoices", {
+          ...response.data,
+        });
 
         var data = response.data;
         var result = {};
         data.forEach((elem) => {
-          var mp = { scores: [], dates: [] };
+          var mp = {
+            scores: [],
+            dates: [],
+          };
           elem.recordedVoices.forEach((recordedVoice) => {
-            mp["scores"].push(recordedVoice.score);
-            mp["dates"].push(recordedVoice.created);
+            mp["scores"].push(recordedVoice.score * 100 || 0);
           });
           result[elem.originalVoiceId] = mp;
         });
         console.log(result);
-        commit("setUserScores", { ...result });
+        commit("setUserScores", {
+          ...result,
+        });
       })
       .catch(function (error) {
         console.log(error);
@@ -57,7 +63,9 @@ const actions = {
     await axios
       .get(api.path + `/users/${userId}/originalvoices`)
       .then(function (response) {
-        commit("setUserOriginalVoices", { ...response.data });
+        commit("setUserOriginalVoices", {
+          ...response.data,
+        });
       })
       .catch(function (error) {
         console.log(error);

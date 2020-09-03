@@ -51,13 +51,23 @@
             v-on:delete-recorded-voice="deleteRecordedvoice"
           ></recorded-voices>
         </div>
-
         <div class="recorded-voices-chart">
           <trend-chart
-            :datasets="data"
+            :datasets="[
+              {
+                data: scores[voice.originalVoiceId]['scores'],
+                smooth: true,
+                showPoints: true,
+              },
+            ]"
             :grid="grid"
-            :labels="labels"
+            :labels="{
+              xLabels: [],
+              yLabels: 11,
+            }"
             :height="height"
+            :min="0"
+            :max="100"
           >
           </trend-chart>
         </div>
@@ -96,24 +106,13 @@ export default {
       recordedVoices: [],
       authorOriginalVoices: [],
       FavouriteVoices: [],
-      labels: {
-        xLabels: ["03/13", "04/13", "05/13", "06/13", "07/13"],
-        yLabels: 10,
-      },
-      data: [
-        {
-          data: [10, 50, 20, 100, 40, 60, 80],
-          smooth: true,
-          showPoints: true,
-        },
-      ],
       grid: {
         verticalLines: true,
         verticalLinesNumber: 1,
         horizontalLines: true,
         horizontalLinesNumber: 1,
       },
-      height: 500,
+      height: 400,
     };
   },
   methods: {
@@ -138,6 +137,7 @@ export default {
       user: "user",
       userRecordedVoices: "userRecordedVoices",
       userOriginalVoices: "userOriginalVoices",
+      scores: "scores",
     }),
   },
 };
