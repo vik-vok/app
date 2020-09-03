@@ -2,17 +2,20 @@
   <div>
     <div class="card">
       <div
-        v-if="voice.photoUrl"
+        v-if="haveUser && voice.user.photoUrl"
         class="card-avatar"
         :style="[
-          voice.user && voice.photoUrl
-            ? { backgroundImage: 'url(' + voice.photoUrl + ')' }
+          voice.user && voice.user.photoUrl
+            ? { backgroundImage: 'url(' + voice.user.photoUrl + ')' }
             : {},
         ]"
       ></div>
       <div
         class="close-container"
-        v-if="user && fetched && user.userId == voice.userId"
+        v-if="
+          (haveUser && user && fetched && user.userId == voice.user.userId) ||
+          (!haveUser && user && fetched && user.userId == voice.userId)
+        "
       >
         <!-- <div> -->
         <button
@@ -34,7 +37,7 @@
         {{ date }}
       </p>
       <p class="user-name" v-if="voice.score">{{ voice.score }}</p>
-      <!--<h5 class="user-name">{{ voice.user.username }}</h5>-->
+      <h5 class="user-name" v-if="haveUser">{{ voice.user.username }}</h5>
       <div class="button-wrapper">
         <button class="play-button play" @click="play($event, voice)"></button>
       </div>
@@ -60,9 +63,8 @@ export default {
     };
   },
   created() {
-    this.currentVoice = this.haveUser ? this.voice.user : this.voice;
-    this.date = this.currentVoice.created
-      ? new Date(this.currentVoice.created).toLocaleString("en-GB")
+    this.date = this.voice.created
+      ? new Date(this.voice.created).toLocaleString("en-GB")
       : null;
   },
   methods: {

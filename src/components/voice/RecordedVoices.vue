@@ -1,7 +1,7 @@
 <template>
   <div class="recorded-voices-content">
     <div :key="voice.id" v-for="voice in recordedVoices">
-      <voice-mini-player :have-user="false" :voice="voice"></voice-mini-player>
+      <voice-mini-player :haveUser="false" :voice="voice"></voice-mini-player>
     </div>
   </div>
 </template>
