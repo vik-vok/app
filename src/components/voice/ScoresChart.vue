@@ -11,7 +11,17 @@
       ]"
       :grid="grid"
       :labels="{
-        xLabels: ['Date', ...scores[voice.originalVoiceId]['dates']],
+        xLabels: [
+          'Date',
+          scores[voice.originalVoiceId]['dates'].length > 2
+            ? scores[voice.originalVoiceId]['dates'][
+                Math.floor(scores[voice.originalVoiceId]['dates'].length / 2)
+              ]
+            : '',
+          scores[voice.originalVoiceId]['dates'][
+            scores[voice.originalVoiceId]['dates'].length - 1
+          ],
+        ],
         yLabels: 5,
       }"
       :height="height"

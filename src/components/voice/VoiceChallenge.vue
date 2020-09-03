@@ -10,7 +10,7 @@
     >
       <label for="">Choose Score</label>
       <input
-        v-model="chllangeScore"
+        v-model="challengeScore"
         type="range"
         class="custom-range"
         min="0"
@@ -18,19 +18,19 @@
         step="0.5"
         id="customRange3"
       />
-      {{ chllangeScore }}
+      {{ challengeScore }}
 
-      <select class="custom-select custom-select-sm">
-        <option selected>Open this select menu</option>
+      <select v-model="challengeUserId" class="custom-select custom-select-sm">
         <option
           v-bind:key="user.userId"
           v-for="user in allUsers"
-          :value="userId"
+          :value="user.userId"
           >{{ user.username }}</option
         >
-        <!-- <option value="2">Two</option>
-            <option value="3">Three</option> -->
       </select>
+      <button class="custom-btnn btn btn-danger" @click="doChallenge">
+        Challenge!
+      </button>
     </b-modal>
   </div>
 </template>
@@ -41,11 +41,17 @@ export default {
   name: "VoiceChallenge",
   data() {
     return {
-      chllangeScore: 0,
+      challengeScore: 0,
+      challengeUserId: null,
     };
   },
   methods: {
-    ...mapActions(["fetchAllUsers"]),
+    ...mapActions(["fetchAllUsers", "addChallenge"]),
+    doChallenge() {
+      console.log("EEs");
+      console.log(this.challengeUserId);
+      this.addChallenge({});
+    },
   },
   created() {
     this.fetchAllUsers();
@@ -55,3 +61,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.custom-btnn {
+  margin: 20px 0;
+}
+</style>
