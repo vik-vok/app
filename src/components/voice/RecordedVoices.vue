@@ -28,7 +28,14 @@ export default {
   overflow-x: scroll;
   padding: 2.5rem 0;
 }
+
 .recorded-voices-content .card {
   margin: 0 30px 0 0;
+}
+
+@media only screen and (max-width: 1440px) {
+  .recorded-voices-content {
+    padding: 2rem 0;
+  }
 }
 </style>

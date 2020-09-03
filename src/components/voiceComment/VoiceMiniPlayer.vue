@@ -36,7 +36,9 @@
       <p class="user-name" v-if="voice.created">
         {{ date }}
       </p>
-      <p class="user-name" v-if="voice.score">{{ voice.score }}</p>
+      <p class="user-name" v-if="voice.score">
+        {{ (voice.score * 100).toString().slice(0, 5) }}%
+      </p>
       <h5 class="user-name" v-if="haveUser">{{ voice.user.username }}</h5>
       <div class="button-wrapper">
         <button class="play-button play" @click="play($event, voice)"></button>
@@ -111,9 +113,9 @@ export default {
 .card {
   flex: 0 0 auto;
   margin: 0 40px;
-  padding: 30px 0;
-  width: 315px;
-  /*height: 280px;*/
+  padding: 15px 0;
+  width: 280px;
+  /* height: 280px; */
   border-radius: 30px;
 }
 
@@ -197,5 +199,30 @@ export default {
 /* Darker background on mouse-over */
 .btn:hover {
   background-color: #af4444;
+}
+
+@media only screen and (max-width: 1440px) {
+  .btn {
+    font-size: 12px;
+    padding: 0.175rem 0.65rem;
+  }
+
+  .user-name {
+    margin: 10px 0;
+  }
+
+  .card[data-v-093f1398] {
+    padding: 25px 0 15px;
+    width: 260px;
+  }
+
+  .play-button {
+    margin: 5px 0 15px;
+  }
+
+  .close-container {
+    top: 13px;
+    right: 13px;
+  }
 }
 </style>

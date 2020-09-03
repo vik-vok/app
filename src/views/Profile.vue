@@ -129,14 +129,15 @@ export default {
 
 <style scoped>
 .profile-page-container {
-  margin: 0 100px;
-  padding: 2.5rem 1rem 3.5;
+  margin: 100px;
+  padding: 2.5rem 1rem 3.5rem;
 }
 
 .profile-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .profile-picture-container {
@@ -156,7 +157,7 @@ export default {
   margin: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .profile-picture-container {
@@ -171,13 +172,6 @@ export default {
 .profile-picture-container img {
   width: 100%;
   height: auto;
-}
-
-.profile-info-container {
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .profile-picture-hover {
@@ -234,5 +228,11 @@ export default {
 
 .author-original-voices-container h1 {
   text-align: left;
+}
+
+@media only screen and (max-width: 1440px) {
+  .profile-page-container {
+    padding: 0 1rem 3.5rem;
+  }
 }
 </style>

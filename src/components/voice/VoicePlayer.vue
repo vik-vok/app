@@ -38,6 +38,7 @@
 
 <script>
 import VoiceRecorder from "./VoiceRecorder";
+
 export default {
   name: "VoicePlayer",
   props: {
@@ -93,6 +94,7 @@ audio {
   text-decoration: none;
   color: black;
 }
+
 .second-inner {
   margin: 10px 0;
 }
@@ -113,6 +115,7 @@ audio {
   .wrapper {
     padding: 10px 10px;
   }
+
   .first {
     height: 60px;
     width: 60px;
@@ -133,6 +136,7 @@ audio {
   .audio-container {
     display: block !important;
   }
+
   .second-header {
     float: left;
     font-size: 20px;
@@ -145,5 +149,16 @@ audio {
 
 .audio-container div {
   margin: 0 10px;
+}
+
+@media only screen and (max-width: 1440px) {
+  .first[data-v-fdbdcb54] {
+    height: 110px;
+    width: 110px;
+  }
+
+  .second-header {
+    font-size: 20px;
+  }
 }
 </style>
