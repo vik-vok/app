@@ -45,6 +45,12 @@ const actions = {
             scores: [],
             dates: [],
           };
+          console.log(
+            elem.recordedVoices.sort(function (rec1, rec2) {
+              return new Date(rec1.created) - new Date(rec2.created);
+            })
+          );
+
           elem.recordedVoices.forEach((recordedVoice) => {
             mp["scores"].push(recordedVoice.score * 100 || 0);
 
