@@ -52,24 +52,7 @@
           ></recorded-voices>
         </div>
         <div class="recorded-voices-chart">
-          <trend-chart
-            :datasets="[
-              {
-                data: scores[voice.originalVoiceId]['scores'],
-                smooth: true,
-                showPoints: true,
-              },
-            ]"
-            :grid="grid"
-            :labels="{
-              xLabels: scores[voice.originalVoiceId]['dates'],
-              yLabels: 11,
-            }"
-            :height="height"
-            :min="0"
-            :max="100"
-          >
-          </trend-chart>
+          <ScoresChart :voice="voice" :scores="scores"></ScoresChart>
         </div>
       </div>
     </div>
@@ -96,10 +79,11 @@
 import { mapGetters, mapActions } from "vuex";
 import VoicePlayer from "../components/voice/VoicePlayer";
 import RecordedVoices from "../components/voice/RecordedVoices";
+import ScoresChart from "../components/voice/ScoresChart";
 
 export default {
   name: "Profile",
-  components: { RecordedVoices, VoicePlayer },
+  components: { ScoresChart, RecordedVoices, VoicePlayer },
   data() {
     return {
       userId: this.$route.params.id,
