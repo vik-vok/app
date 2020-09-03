@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="wrapper-main">
-      <VoiceChallenge />
+      <VoiceChallenge :voice="voice" />
       <VoicePlayer v-if="voice" class="elem" :voice="voice" />
       <VoiceStatistics class="elem" :stats="singleStats" />
       <VoiceComments

@@ -11,7 +11,7 @@ const actions = {
     { originalVoiceId, senderUserId, receiverUserId, score }
   ) {
     var data = { originalVoiceId, senderUserId, receiverUserId, score };
-    await axios.post(api.path + "/merger/voice/original", data);
+    await axios.post(api.path + "/challenges", data);
     commit;
   },
 };

@@ -45,19 +45,29 @@ export default {
       challengeUserId: null,
     };
   },
+  props: {
+    voice: Object,
+  },
   methods: {
-    ...mapActions(["fetchAllUsers", "addChallenge"]),
+    ...mapActions(["fetchAllUsers", "addChallenge", "fetchUser"]),
     doChallenge() {
-      console.log("EEs");
-      console.log(this.challengeUserId);
-      this.addChallenge({});
+      var originalVoiceId = this.voice.originalVoiceId;
+      var senderUserId = this.user.userId;
+      var receiverUserId = this.challengeUserId;
+      var score = parseInt(this.challengeScore);
+      this.addChallenge({
+        originalVoiceId,
+        senderUserId,
+        receiverUserId,
+        score,
+      });
     },
   },
   created() {
     this.fetchAllUsers();
   },
   computed: {
-    ...mapGetters(["allUsers"]),
+    ...mapGetters(["allUsers", "user"]),
   },
 };
 </script>
