@@ -100,9 +100,14 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 .disabled {
   display: none !important;
 }
+
 .card {
   flex: 0 0 auto;
   margin: 0 40px;
@@ -111,6 +116,7 @@ export default {
   /*height: 280px;*/
   border-radius: 30px;
 }
+
 .card-avatar {
   border-radius: 50%;
   height: 115px;
@@ -120,9 +126,11 @@ export default {
   margin: 0 auto;
   background-image: url("https://hezway.ipower.com/poolsafeinc/wp-content/uploads/2017/06/profile.png");
 }
+
 .user-name {
   margin: 15px 0;
 }
+
 .play-button {
   /*position: absolute;*/
   background: #f8bace;
@@ -141,31 +149,39 @@ export default {
   /*margin: auto;*/
   margin: 15px 0;
 }
+
 .play-button:hover {
   background: #f8d4e0;
 }
+
 .stop {
   background: grey;
 }
+
 .stop:hover {
   background: black;
 }
+
 .stop::after {
   content: "Stop";
 }
+
 .play::after {
   content: "Play";
 }
+
 @media only screen and (max-width: 800px) {
   .card {
     margin: 0 20px;
   }
 }
+
 .close-container {
   position: absolute;
   top: 20px;
   right: 20px;
 }
+
 /* Style buttons */
 .btn {
   background-color: salmon; /* Blue background */
@@ -177,6 +193,7 @@ export default {
   /*top: 10%;*/
   /*right: 10%;*/
 }
+
 /* Darker background on mouse-over */
 .btn:hover {
   background-color: #af4444;
