@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="wrapper-main">
+      <VoiceChallenge />
       <VoicePlayer v-if="voice" class="elem" :voice="voice" />
       <VoiceStatistics class="elem" :stats="singleStats" />
       <VoiceComments
@@ -18,6 +19,7 @@
 <script>
 import VoicePlayer from "@/components/voice/VoicePlayer";
 import VoiceStatistics from "@/components/voice/VoiceStatistics";
+import VoiceChallenge from "@/components/voice/VoiceChallenge";
 import VoiceComments from "@/components/voiceComment/VoiceComments";
 import { mapGetters, mapActions } from "vuex";
 
@@ -76,6 +78,7 @@ export default {
     VoicePlayer,
     VoiceComments,
     VoiceStatistics,
+    VoiceChallenge,
   },
 };
 </script>

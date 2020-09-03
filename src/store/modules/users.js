@@ -7,6 +7,7 @@ const state = {
   userRecordedVoices: [],
   userOriginalVoices: [],
   scores: {},
+  allUsers: {},
 };
 
 const actions = {
@@ -85,6 +86,10 @@ const actions = {
         console.log(error);
       });
   },
+  async fetchAllUsers({ commit }) {
+    const response = await axios.get(api.path + "/users");
+    commit("setAllUsers", response.data);
+  },
 };
 
 const mutations = {
@@ -97,6 +102,7 @@ const mutations = {
   setUserOriginalVoices: (state, userOriginalVoices) =>
     (state.userOriginalVoices = userOriginalVoices),
   setUserScores: (state, scores) => (state.scores = scores),
+  setAllUsers: (state, allUsers) => (state.allUsers = allUsers),
 };
 
 const getters = {
@@ -105,6 +111,7 @@ const getters = {
   userRecordedVoices: (state) => state.userRecordedVoices,
   userOriginalVoices: (state) => state.userOriginalVoices,
   scores: (state) => state.scores,
+  allUsers: (state) => state.allUsers,
 };
 
 export default {
