@@ -47,6 +47,14 @@ const actions = {
           };
           elem.recordedVoices.forEach((recordedVoice) => {
             mp["scores"].push(recordedVoice.score * 100 || 0);
+
+            // Date
+            var dt = new Date();
+            if (recordedVoice.created) {
+              dt = new Date(recordedVoice.created);
+            }
+            var date = dt.toLocaleDateString("en-US");
+            mp["dates"].push(date);
           });
           result[elem.originalVoiceId] = mp;
         });

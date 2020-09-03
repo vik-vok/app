@@ -62,7 +62,7 @@
             ]"
             :grid="grid"
             :labels="{
-              xLabels: [],
+              xLabels: scores[voice.originalVoiceId]['dates'],
               yLabels: 11,
             }"
             :height="height"
