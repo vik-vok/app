@@ -1,7 +1,13 @@
 <template>
   <div class="recorded-voices-content">
-    <div :key="voice.id" v-for="voice in recordedVoices">
-      <voice-mini-player :haveUser="false" :voice="voice"></voice-mini-player>
+    <div :key="voice.recordedVoiceId" v-for="voice in recordedVoices">
+      <voice-mini-player
+        :haveUser="false"
+        :voice="voice"
+        v-on:delete-voice="
+          $emit('delete-recorded-voice', voice.recordedVoiceId)
+        "
+      ></voice-mini-player>
     </div>
   </div>
 </template>

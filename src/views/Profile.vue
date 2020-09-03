@@ -48,6 +48,7 @@
           <VoicePlayer :voice="voice"></VoicePlayer>
           <recorded-voices
             :recordedVoices="voice.recordedVoices"
+            v-on:delete-recorded-voice="deleteRecordedvoice"
           ></recorded-voices>
         </div>
 
@@ -116,8 +117,15 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["fetchUserRecordedVoices", "fetchUserOriginalVoices"]),
+    ...mapActions([
+      "fetchUserRecordedVoices",
+      "deleteRecordedVoice",
+      "fetchUserOriginalVoices",
+    ]),
     changeProfilePicture() {},
+    deleteRecordedvoice(id) {
+      this.deleteRecordedVoice(id);
+    },
   },
   created() {
     this.fetchUserRecordedVoices(this.userId).then(() => {});
