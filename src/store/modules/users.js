@@ -6,6 +6,7 @@ const state = {
   fetched: false,
   userRecordedVoices: [],
   userOriginalVoices: [],
+  scores: {},
 };
 
 const actions = {
@@ -34,6 +35,19 @@ const actions = {
       .get(api.path + `/merger/user/${userId}/voices`)
       .then(function (response) {
         commit("setUserRecordedVoices", { ...response.data });
+
+        var data = response.data;
+        var result = {};
+        data.forEach((elem) => {
+          var mp = { scores: [], dates: [] };
+          elem.recordedVoices.forEach((recordedVoice) => {
+            mp["scores"].push(recordedVoice.score);
+            mp["dates"].push(recordedVoice.created);
+          });
+          result[elem.originalVoiceId] = mp;
+        });
+        console.log(result);
+        commit("setUserScores", { ...result });
       })
       .catch(function (error) {
         console.log(error);
@@ -60,6 +74,7 @@ const mutations = {
     (state.userRecordedVoices = userRecordedVoices),
   setUserOriginalVoices: (state, userOriginalVoices) =>
     (state.userOriginalVoices = userOriginalVoices),
+  setUserScores: (state, scores) => (state.scores = scores),
 };
 
 const getters = {
@@ -67,6 +82,7 @@ const getters = {
   fetched: (state) => state.fetched,
   userRecordedVoices: (state) => state.userRecordedVoices,
   userOriginalVoices: (state) => state.userOriginalVoices,
+  scores: (state) => state.scores,
 };
 
 export default {
