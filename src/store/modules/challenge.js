@@ -3,33 +3,7 @@ import api from "./APIconfig";
 
 const state = {
   challenges: {
-    complete: [
-      {
-        challengeId: 1,
-        sender: "saba",
-        score: 90,
-      },
-      {
-        challengeId: 1,
-        sender: "saba",
-        score: 90,
-      },
-      {
-        challengeId: 1,
-        sender: "saba",
-        score: 90,
-      },
-      {
-        challengeId: 1,
-        sender: "saba",
-        score: 90,
-      },
-      {
-        challengeId: 1,
-        sender: "saba",
-        score: 90,
-      },
-    ],
+    complete: [],
     incomplete: [],
   },
 };
@@ -48,12 +22,26 @@ const actions = {
       .get(api.path + `/merger/challenges/${userId}`)
       .then((response) => {
         console.log(response);
-        commit;
+
+        var challenges = {
+          complete: [],
+          incomplete: [],
+        };
+        response.data.forEach((element) => {
+          if (element.accomplished) {
+            challenges.complete.push(element);
+          } else {
+            challenges.incomplete.push(element);
+          }
+        });
+        commit("setChallenges", challenges);
       });
   },
 };
 
-const mutations = {};
+const mutations = {
+  setChallenges: (state, challenges) => (state.challenges = challenges),
+};
 
 const getters = {
   challenges: (state) => state.challenges,

@@ -42,28 +42,32 @@
           <h3>Accomplished</h3>
           <div
             :key="challenge.challengeId"
-            v-for="challenge in challenges['complete']"
+            v-for="challenge in challenges.incomplete"
             class="single-challenge"
           >
             <p>
-              <strong>Name</strong>
+              <strong>{{ challenge.senderUser.username }}</strong>
               Challenged you to score at least
-              <strong>90%</strong>
+              <strong>{{ challenge.score }}%</strong>
               For the voice:
-              <strong> <a href=""> Wubalubadubdub </a></strong>
+              <!-- <strong> <a href=""> {{challenge.voice}} </a></strong> -->
             </p>
           </div>
         </div>
         <div class="challenge-icomplete">
           <h3>In Progress</h3>
-          <div class="single-challenge">
+          <div
+            :key="challenge.challengeId"
+            v-for="challenge in challenges.completed"
+            class="single-challenge"
+          >
             <p>
               You have completed challenge by
-              <strong> Name </strong>
+              <strong> {{ challenge.senderUser.username }} </strong>
               for the voice:
-              <strong> <a href=""> Wubalubadubdub </a></strong>
+              <!-- <strong> <a href=""> Wubalubadubdub </a></strong> -->
               with minimum of
-              <strong>90%!</strong>
+              <strong>{{ challenge.score }}%!</strong>
             </p>
           </div>
         </div>
