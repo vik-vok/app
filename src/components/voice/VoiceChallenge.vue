@@ -54,7 +54,7 @@ export default {
       var originalVoiceId = this.voice.originalVoiceId;
       var senderUserId = this.user.userId;
       var receiverUserId = this.challengeUserId;
-      var score = parseInt(this.challengeScore);
+      var score = parseFloat(this.challengeScore);
       this.addChallenge({
         originalVoiceId,
         senderUserId,
