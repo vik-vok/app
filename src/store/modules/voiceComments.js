@@ -24,8 +24,6 @@ const actions = {
     commit("newVoiceComment", newData);
   },
   deleteVoiceComment({ commit }, id) {
-    console.log("delete");
-    console.log(id);
     axios
       .delete(api.path + `/comments/${id}`)
       .then(() => commit("removeCommentByID", id))

@@ -65,7 +65,6 @@ const actions = {
           });
           result[elem.originalVoiceId] = mp;
         });
-        console.log(result);
         commit("setUserScores", {
           ...result,
         });

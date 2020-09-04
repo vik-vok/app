@@ -11,14 +11,12 @@ const actions = {
       api.path + `/originalvoices/${originalVoiceId}/voices`
     );
     commit("setRecordedVoices", response.data);
-    console.log(response.data);
   },
   async addRecordedVoice({ commit }, { fd, user }) {
     await axios
       .post(api.path + "/recordedvoices", fd)
       .then(function (response) {
         commit("appendRecordedVoices", { ...response.data, user });
-        console.log(response);
       })
       .catch(function (error) {
         console.log(error);
