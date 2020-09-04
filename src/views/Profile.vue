@@ -30,8 +30,43 @@
       </div>
 
       <div class="profile-info-container">
-        <p>{{ user.username }}</p>
-        <p>{{ user.email }}</p>
+        <h1>{{ user.username }}</h1>
+        <h5>{{ user.email }}</h5>
+      </div>
+    </div>
+
+    <div class="user-challenges">
+      <h1>User Challenges</h1>
+      <div class="challenge-wrapper">
+        <div class="challenge-completed">
+          <h3>Accomplished</h3>
+          <div
+            :key="challenge.challengeId"
+            v-for="challenge in challenges['complete']"
+            class="single-challenge"
+          >
+            <p>
+              <strong>Name</strong>
+              Challenged you to score at least
+              <strong>90%</strong>
+              For the voice:
+              <strong>Wubalubadubdub!</strong>
+            </p>
+          </div>
+        </div>
+        <div class="challenge-icomplete">
+          <h3>In Progress</h3>
+          <div class="single-challenge">
+            <p>
+              You have completed challenge by
+              <strong>Name</strong>
+              for the voice:
+              <strong>Wubalubadubdub</strong>
+              with minimum of
+              <strong>90%!</strong>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -58,7 +93,6 @@
     </div>
     <div class="author-original-voices-container">
       <h1>User Original Voices</h1>
-
       <div
         class="user-original-voices"
         v-bind:key="voice.originalVoiceId"
@@ -104,6 +138,7 @@ export default {
       "fetchUserRecordedVoices",
       "deleteRecordedVoice",
       "fetchUserOriginalVoices",
+      "fetchChallengeByUserId",
     ]),
     changeProfilePicture() {},
     deleteRecordedvoice(id) {
@@ -113,8 +148,7 @@ export default {
   created() {
     this.fetchUserRecordedVoices(this.userId).then(() => {});
     this.fetchUserOriginalVoices(this.userId);
-    // this.height = document.getElementsByClassName('recorded-voices-data').offsetHeight
-    // console.log("height", this.height)
+    this.fetchChallengeByUserId(this.userId);
   },
   computed: {
     ...mapGetters({
@@ -122,12 +156,25 @@ export default {
       userRecordedVoices: "userRecordedVoices",
       userOriginalVoices: "userOriginalVoices",
       scores: "scores",
+      challenges: "challenges",
     }),
   },
 };
 </script>
 
 <style scoped>
+.user-challenges {
+  margin: 20px;
+}
+.challenge-wrapper {
+  display: flex;
+}
+.challenge-completed {
+  flex: 1;
+}
+.challenge-icomplete {
+  flex: 1;
+}
 .profile-page-container {
   margin: 100px;
   padding: 2.5rem 1rem 3.5rem;
@@ -170,8 +217,8 @@ export default {
 }
 
 .profile-picture-container {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   position: relative;
   background-color: rgba(255, 255, 255, 0);
   transition: all 0.3s ease;

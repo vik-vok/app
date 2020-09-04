@@ -2,7 +2,36 @@ import axios from "axios";
 import api from "./APIconfig";
 
 const state = {
-  challenges: [],
+  challenges: {
+    complete: [
+      {
+        challengeId: 1,
+        sender: "saba",
+        score: 90,
+      },
+      {
+        challengeId: 1,
+        sender: "saba",
+        score: 90,
+      },
+      {
+        challengeId: 1,
+        sender: "saba",
+        score: 90,
+      },
+      {
+        challengeId: 1,
+        sender: "saba",
+        score: 90,
+      },
+      {
+        challengeId: 1,
+        sender: "saba",
+        score: 90,
+      },
+    ],
+    incomplete: [],
+  },
 };
 
 const actions = {
@@ -14,17 +43,20 @@ const actions = {
     await axios.post(api.path + "/challenges", data);
     commit;
   },
+  async fetchChallengeByUserId({ commit }, userId) {
+    await axios
+      .post(api.path + `/merger/challenges/${userId}`)
+      .then((response) => {
+        console.log(response);
+        commit;
+      });
+  },
 };
 
-const mutations = {
-  setVoices: (state, voices) => (state.voices = voices),
-  setOneVoice: (state, voice) => (state.voice = voice),
-};
+const mutations = {};
 
 const getters = {
-  allVoices: (state) => state.voices,
-  popularVoices: (state) => state.voices.slice(0, 3),
-  voice: (state) => state.voice,
+  challenges: (state) => state.challenges,
 };
 
 export default {
