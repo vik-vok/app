@@ -50,7 +50,9 @@
               Challenged you to score at least
               <strong>{{ challenge.score }}%</strong>
               For the voice:
-              <!-- <strong> <a href=""> {{challenge.voice}} </a></strong> -->
+              <strong>
+                <a href=""> {{ challenge.voice }} </a></strong
+              >
             </p>
           </div>
         </div>
@@ -58,7 +60,7 @@
           <h3>In Progress</h3>
           <div
             :key="challenge.challengeId"
-            v-for="challenge in challenges.completed"
+            v-for="challenge in challenges.complete"
             class="single-challenge"
           >
             <p>

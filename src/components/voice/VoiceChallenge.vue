@@ -15,7 +15,6 @@
         class="custom-range"
         min="0"
         max="100"
-        step="0.5"
         id="customRange3"
       />
       {{ challengeScore }}
