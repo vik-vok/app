@@ -49,9 +49,11 @@
               <strong>{{ challenge.senderUser.username }}</strong>
               Challenged you to score at least
               <strong>{{ challenge.score }}%</strong>
-              For the voice:
+              For the
               <strong>
-                <a href=""> {{ challenge.voice }} </a></strong
+                <a :href="'/voices/' + challenge.originalVoiceId">
+                  Voice
+                </a></strong
               >
             </p>
           </div>
@@ -66,8 +68,12 @@
             <p>
               You have completed challenge by
               <strong> {{ challenge.senderUser.username }} </strong>
-              for the voice:
-              <!-- <strong> <a href=""> Wubalubadubdub </a></strong> -->
+              for the
+              <strong>
+                <a :href="'/voices/' + challenge.originalVoiceId">
+                  Voice
+                </a></strong
+              >
               with minimum of
               <strong>{{ challenge.score }}%!</strong>
             </p>

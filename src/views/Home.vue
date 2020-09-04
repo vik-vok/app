@@ -5,11 +5,10 @@
       <div class="right">
         <h1>Welcome to VikVok</h1>
         <h4>
-          BEST Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-          ornare massa a dui semper placerat. In sodales blandit dolor ac
-          vehicula. Vestibulum rhoncus ante nisi, vel imperdiet lectus interdum
-          vitae. Proin tristique sed risus at bibendum. Cras molestie justo
-          lorem
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare
+          massa a dui semper placerat. In sodales blandit dolor ac vehicula.
+          Vestibulum rhoncus ante nisi, vel imperdiet lectus interdum vitae.
+          Proin tristique sed risus at bibendum. Cras molestie justo lorem
         </h4>
         <a href="#" class="button">
           <strong>Join Us</strong
