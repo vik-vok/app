@@ -39,7 +39,7 @@
       <h1>User Challenges</h1>
       <div class="challenge-wrapper">
         <div class="challenge-completed">
-          <h3>Accomplished</h3>
+          <h3>In Progress</h3>
           <div
             :key="challenge.challengeId"
             v-for="challenge in challenges.incomplete"
@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="challenge-icomplete">
-          <h3>In Progress</h3>
+          <h3>Accomplished</h3>
           <div
             :key="challenge.challengeId"
             v-for="challenge in challenges.complete"
