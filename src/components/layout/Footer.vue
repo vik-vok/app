@@ -104,7 +104,7 @@
         </div>
       </div>
       <div class="copyright text-center">
-        Copyright &copy; 202 <span>vik-vok</span>
+        Copyright &copy; 2020 <span>vik-vok</span>
       </div>
     </footer>
   </div>

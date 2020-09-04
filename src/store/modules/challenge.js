@@ -45,7 +45,7 @@ const actions = {
   },
   async fetchChallengeByUserId({ commit }, userId) {
     await axios
-      .post(api.path + `/merger/challenges/${userId}`)
+      .get(api.path + `/merger/challenges/${userId}`)
       .then((response) => {
         console.log(response);
         commit;

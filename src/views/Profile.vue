@@ -50,7 +50,7 @@
               Challenged you to score at least
               <strong>90%</strong>
               For the voice:
-              <strong>Wubalubadubdub!</strong>
+              <strong> <a href=""> Wubalubadubdub </a></strong>
             </p>
           </div>
         </div>
@@ -59,9 +59,9 @@
           <div class="single-challenge">
             <p>
               You have completed challenge by
-              <strong>Name</strong>
+              <strong> Name </strong>
               for the voice:
-              <strong>Wubalubadubdub</strong>
+              <strong> <a href=""> Wubalubadubdub </a></strong>
               with minimum of
               <strong>90%!</strong>
             </p>
